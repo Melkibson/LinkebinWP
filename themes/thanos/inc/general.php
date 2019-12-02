@@ -103,8 +103,6 @@ add_action( 'after_setup_theme', 'thanos_content_width', 0 );
  */
 function thanos_scripts() {
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );
-<<<<<<< HEAD
-
 	//Jquery
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js');
@@ -115,13 +113,5 @@ function thanos_scripts() {
 	wp_register_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.js');
 	wp_enqueue_script('bootstrap-js');
 
-
-
-
-=======
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
->>>>>>> e2c4f4c8ea5eab750e82e00494e1c32b3e2b9316
 }
 add_action( 'wp_enqueue_scripts', 'thanos_scripts' );

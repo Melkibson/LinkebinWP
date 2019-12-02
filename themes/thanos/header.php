@@ -22,11 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-<<<<<<< HEAD
-=======
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'thanos' ); ?></a>
-
->>>>>>> e2c4f4c8ea5eab750e82e00494e1c32b3e2b9316
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php

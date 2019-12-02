@@ -42,7 +42,6 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-<<<<<<< HEAD
 <!--		<nav id="site-navigation" class="main-navigation">-->
 <!--			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'thanos' ); ?><!--</button>-->
 <!--			--><?php
@@ -66,17 +65,6 @@
                 <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
             </div>
         </nav>
-=======
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'thanos' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
->>>>>>> e2c4f4c8ea5eab750e82e00494e1c32b3e2b9316
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

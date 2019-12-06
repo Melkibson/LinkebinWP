@@ -7,7 +7,6 @@ Linkebin is a student project whose purpose is to get geolocation data from a js
 
 # Prerequisites
 
-## Wordpress
 
 -   [PHP](https://secure.php.net/)  version 7.3 ou supérieure / or greater
 -   [MySQL](https://www.mysql.com/)  version 5.6 ou supérieure / or greater _OU_  / _OR_
@@ -19,32 +18,30 @@ Linkebin is a student project whose purpose is to get geolocation data from a js
 Rendez-vous sur [fr.wordpress.org](http://fr.wordpress.org/ "Téléchargez WordPress"), téléchargez la dernière version de WordPress et dé-zipper la.
 Créez une nouvelle base de données MySQL.
 
-Go to [en.wordpress.org](http://en.wordpress.org/ "Download WordPress"), download the last Wordpress and unzip it 
-Create a new MySQL database.
-
 **MAMP - MacOS**
 
 Copiez les fichiers Wordpress dans le dossier suivant :
-Applications/MAMP/htdocs/[mon-projet]
-Lancez MAMP et accédez à la page "Index of/"
-Sélectionnez votre projet et suivez les instructions d'installation de Wordpress.
+- Applications/MAMP/htdocs/[mon-projet]
+- Lancez MAMP et accédez à la page "Index of/"
+- Sélectionnez votre projet et suivez les instructions d'installation de Wordpress.
 
 Copy the Wordpress files in the following directory:
-Applications/MAMP/htdocs/[mon-projet]
-Run  MAMP and go the "Index of/" page
-Select your project and follow the instructions to Install Wordpress.
+- Applications/MAMP/htdocs/[mon-projet]
+- Run  MAMP and go the "Index of/" page
+- Select your project and follow the instructions to Install Wordpress.
 
 **XAMPP - Windows/Linux**
 
 Copiez les fichiers Wordpress dans le dossier suivant :
-[Emplacement de l'installation]/XAMPP/htdocs/[mon-projet]
-Lancez XAMPP et accédez à la page "Index of/"
-Sélectionnez votre projet et suivez les instructions d'installation de Wordpress.
+- [Emplacement de l'installation]/XAMPP/htdocs/[mon-projet]
+- Lancez XAMPP et accédez à la page "Index of/"
+- Sélectionnez votre projet et suivez les instructions d'installation de Wordpress.
 
 Copy the Wordpress files in the following directory:
-[Emplacement de l'installation]/XAMPP/htdocs/[mon-projet]
-Run XAMPP and go the "Index of/" page
-Select your project and follow the instructions to install Wordpress.
+
+- [Emplacement de l'installation]/XAMPP/htdocs/[mon-projet]
+- Run XAMPP and go the "Index of/" page
+- Select your project and follow the instructions to install Wordpress.
 
 
 

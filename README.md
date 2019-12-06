@@ -19,6 +19,9 @@ Linkebin is a student project whose purpose is to get geolocation data from a js
 Rendez-vous sur [fr.wordpress.org](http://fr.wordpress.org/ "Téléchargez WordPress"), téléchargez la dernière version de WordPress et dé-zipper la.
 Créez une nouvelle base de données MySQL.
 
+Go to [en.wordpress.org](http://en.wordpress.org/ "Download WordPress"), download the last Wordpress and unzip it 
+Create a new MySQL database.
+
 **MAMP - MacOS**
 
 Copiez les fichiers Wordpress dans le dossier suivant :

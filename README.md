@@ -47,8 +47,6 @@ Select your project and follow the instructions to install Wordpress.
 
 # Authors
 
-## Authors
-
 -   Camille Lupo -  [Git](https://github.com/camillelupo)
 -   Yamna Melki -  [Git](https://github.com/melkibson)
 -   Baptiste Bobot -  [Git](https://github.com/camillelupo/LinkeBinAPI/blob/master)

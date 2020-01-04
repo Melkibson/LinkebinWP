@@ -34,7 +34,7 @@
                     <ul class="nav navbar-nav ml-auto">
                         <li id="contact-us" class="nav-item" role="presentation"><a class=" js-scroll-trigger" href="#contact">Contactez-nous</a></li>
                         <li class="nav-item" role="presentation">
-                                <a class="my_account  js-scroll-trigger shadow-sm" onclick="openNav()">Mon Compte</a>
+                                <a href="<?php echo esc_url( wp_registration_url() ); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
                         </li>
                     </ul>
                 </div>

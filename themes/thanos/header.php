@@ -11,60 +11,48 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="margin: 0 !important;">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$thanos_description = get_bloginfo( 'description', 'display' );
-			if ( $thanos_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $thanos_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<body id="page-top">
 
-<!--		<nav id="site-navigation" class="main-navigation">-->
-<!--			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'thanos' ); ?><!--</button>-->
-<!--			--><?php
-//			wp_nav_menu( array(
-//				'theme_location' => 'menu-1',
-//				'menu_id'        => 'primary-menu',
-//			) );
-//			?>
-<!--		</nav><!-- #site-navigation -->
-        <nav class="site-header sticky-top py-1">
-            <div class="container d-flex flex-column flex-md-row justify-content-between">
-                <a class="py-2" href="#" aria-label="Product">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
-                </a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-                <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+        <nav class="navbar navbar-expand-lg fixed-top border-0 shadow-sm p-0" id="mainNav">
+            <button id="prout-nav" class="navbar-brand border-0 m-0 h-100">
+                <img class="prout" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
+            </button>
+            <div class="container-fluid">
+                <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li id="contact-us" class="nav-item" role="presentation"><a class=" js-scroll-trigger" href="#contact">Contactez-nous</a></li>
+                        <li class="nav-item" role="presentation">
+                                <a class="my_account  js-scroll-trigger shadow-sm" onclick="openNav()">Mon Compte</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="myNav" class="overlay-account ">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content login-dark mx-auto my-auto">
+                        <form method="post" style="  background:linear-gradient(70deg, #d6d9d4 30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, rgb(199, 253, 202) 60%, #fff 60%);">
+                            <h2 class="sr-only">Login Form</h2>
+                            <div class="illustration"><i class="icon ion-ios-locked-outline" style="color: green;"></i></div>
+                            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" style="font-family: Ubuntu, sans-serif;"></div>
+                            <div class="form-group"><input class="form-control" type="password" placeholder="Mot de passe" name="password" style="font-family: Ubuntu, sans-serif;"></div>
+                            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: green;font-family: Ubuntu, sans-serif;">Se connecter</button>
+                            </div><a class="forgot" href="#" style="font-family: Ubuntu, sans-serif;">Identifiant ou mot de passe oublié ?</a>
+                        </form>
+                </div>
             </div>
         </nav>
-	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+
+

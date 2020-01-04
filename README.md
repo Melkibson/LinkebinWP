@@ -26,7 +26,7 @@ Copiez les fichiers Wordpress dans le dossier suivant :
 - Sélectionnez votre projet et suivez les instructions d'installation de Wordpress.
 
 Copy the Wordpress files in the following directory:
-- Applications/MAMP/htdocs/[mon-projet]
+- Applications/MAMP/htdocs/[my-project]
 - Run  MAMP and go the "Index of/" page
 - Select your project and follow the instructions to Install Wordpress.
 
@@ -39,7 +39,7 @@ Copiez les fichiers Wordpress dans le dossier suivant :
 
 Copy the Wordpress files in the following directory:
 
-- [Emplacement de l'installation]/XAMPP/htdocs/[mon-projet]
+- [Installation directory]/XAMPP/htdocs/[my-project]
 - Run XAMPP and go the "Index of/" page
 - Select your project and follow the instructions to install Wordpress.
 

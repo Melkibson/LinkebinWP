@@ -136,8 +136,12 @@ function thanos_scripts() {
 
 	//Mapbox
 	wp_enqueue_style('mapbox-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css');
+	wp_enqueue_style('mapbox-gl-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css');
+
 	wp_register_script('mapbox', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js');
 	wp_enqueue_script('mapbox');
+	wp_register_script('mapbox-gl', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js');
+	wp_enqueue_script('mapbox-gl');
 	wp_register_script('es6-promise', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js');
 	wp_enqueue_script('es6-promise');
 	wp_register_script('es6-promise-auto', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js');

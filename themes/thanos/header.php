@@ -25,7 +25,7 @@
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
 
         .marker {
-            background-image: url('mapbox-icon.png');
+            background-image: url('assets/img/mapbox-icon.png');
             background-size: cover;
             width: 50px;
             height: 50px;

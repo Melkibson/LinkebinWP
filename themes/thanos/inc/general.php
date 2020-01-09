@@ -111,6 +111,7 @@ function send_smtp_email( $phpmailer ) {
 	$phpmailer->FromName   = SMTP_NAME;
 }
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -133,6 +134,14 @@ function thanos_scripts() {
 	wp_register_script('sweetalert-js', get_template_directory_uri() . '/node_modules/sweetalert2/dist/sweetalert2.all.js');
 	wp_enqueue_script('sweetalert-js');
 
+	//Mapbox
+	wp_enqueue_style('mapbox-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css');
+	wp_register_script('mapbox', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js');
+	wp_enqueue_script('mapbox');
+	wp_register_script('es6-promise', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js');
+	wp_enqueue_script('es6-promise');
+	wp_register_script('es6-promise-auto', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js');
+	wp_enqueue_script('es6-promise-auto');
 
 
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );
@@ -140,3 +149,9 @@ function thanos_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'thanos_scripts' );
+
+/**
+ * Enqueue admin scripts and styles
+ */
+
+

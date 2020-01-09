@@ -3,6 +3,7 @@
  Template Name: Home
  */
 get_header();?>
+<style>#map { position: relative; top: 0; bottom: 0; height: 800px;}</style>
     <main id="mainContent" class="p-0">
         <div class="row">
             <aside id="sidebar-menu" class="shadow-sm">
@@ -18,8 +19,7 @@ get_header();?>
                 </div>
             </div>
         </div>
-        <div id="map" class="container pull-up">
-            <div class="row">
+        <div id="map2" class="container pull-up">
                 <div class="col-lg-9 m-auto">
                     <div class="card-m-b-30 bg-light rounded-lg shadow-sm">
                         <div class="card-header border-0">
@@ -31,7 +31,6 @@ get_header();?>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <script>
@@ -43,8 +42,8 @@ get_header();?>
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-103.59179687498357, 40.66995747013945],
-                zoom: 3
+                center: [1.4333257, 43.6000354],
+                zoom: 15
             });
 
 
@@ -60,12 +59,13 @@ get_header();?>
 
             //Intégration du geojson dans une variable
             var request = JSON.parse(httpGet("https://angotbaptiste.com/test.php"));
+            var baseurl = 'http://localhost/wordpresslinkebin/';
 
 
 
             map.on('load', function() {
 
-                map.loadImage('wp-content/themes/thanos/assets/img/6774888_preview.png.jpeg', function(error, image) {
+                map.loadImage(baseurl + 'wp-content/themes/thanos/assets/img/poubelleverre.png', function(error, image) {
                     if (error) throw error;
                     map.addImage('poubelle', image);
 
@@ -82,17 +82,19 @@ get_header();?>
 
 
 
-                    map.addControl(new mapboxgl.GeolocateControl({
-                        positionOptions: {
-                            enableHighAccuracy: true
-                        },
-                        trackUserLocation: true
-                    }));
+                    //map.addControl(new mapboxgl.GeolocateControl({
+                    //    positionOptions: {
+                    //        enableHighAccuracy: true
+                    //    },
+                    //    trackUserLocation: true
+                   // }));
                     var geocoder = new MapboxGeocoder({
                         accessToken: mapboxgl.accessToken,
                         marker: {
-                            color: 'orange'
+                            color: 'orange',
+                            radius: 1000
                         },
+
                         mapboxgl: mapboxgl
                     });
 
@@ -104,11 +106,6 @@ get_header();?>
                         source: "BIN",
                         filter: ["has", "point_count"],
                         paint: {
-// Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-// with three steps to implement three types of circles:
-//   * Blue, 20px circles when point count is less than 100
-//   * Yellow, 30px circles when point count is between 100 and 750
-//   * Pink, 40px circles when point count is greater than or equal to 750
                             "circle-color": [
                                 "step",
                                 ["get", "point_count"],
@@ -191,8 +188,6 @@ get_header();?>
                     map.getCanvas().style.cursor = '';
                 });
             });
-
-            // code from the next step will go here!
 
         </script>
     </main>

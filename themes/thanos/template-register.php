@@ -3,7 +3,7 @@
  Template Name: Register
  */
 
-if (isset($_POST['submitted'])):
+if (isset($_POST['submitted']) && empty($errors)):
 	$user_login = strip_tags(trim($_POST['login']));
 	$user_email = filter_var(strip_tags(trim($_POST['email'])),FILTER_VALIDATE_EMAIL );
 	$user_password = strip_tags(trim($_POST['password']));
@@ -42,9 +42,8 @@ if (isset($_POST['submitted'])):
         if($user_password != $user_confirmed_password):
             $errors['user_confirmed_password'] = 'Le mot de passe ne correspond pas';
         endif;
-    else:
-        $user_id = wp_insert_user($args);
     endif;
+	wp_insert_user($args);
 endif;
 
 

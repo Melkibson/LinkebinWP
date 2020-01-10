@@ -98,6 +98,7 @@ add_action( 'after_setup_theme', 'thanos_content_width', 0 );
  */
 
 // SMTP Authentication
+
 add_action( 'phpmailer_init', 'send_smtp_email' );
 function send_smtp_email( $phpmailer ) {
 	$phpmailer->isSMTP();
@@ -115,6 +116,10 @@ function send_smtp_email( $phpmailer ) {
  * Enqueue scripts and styles.
  */
 function thanos_scripts() {
+	//Main JS
+	wp_register_script('main-js', get_template_directory_uri() . '/assets/js/script.js');
+	wp_enqueue_script('main-js');
+
 	//Jquery
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js');
@@ -136,7 +141,6 @@ function thanos_scripts() {
 
 
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );
-
 
 }
 add_action( 'wp_enqueue_scripts', 'thanos_scripts' );

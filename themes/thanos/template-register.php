@@ -3,7 +3,7 @@
  Template Name: Register
  */
 
-if (isset($_POST['submitted'])):
+if (isset($_POST['submitted']) && empty($errors)):
 	$user_login = strip_tags(trim($_POST['login']));
 	$user_email = filter_var(strip_tags(trim($_POST['email'])),FILTER_VALIDATE_EMAIL );
 	$user_password = strip_tags(trim($_POST['password']));
@@ -13,7 +13,6 @@ if (isset($_POST['submitted'])):
 	$uppercase = preg_match('@[A-Z]@', $user_password);
 	$lowercase = preg_match('@[a-z]@', $user_password);
 	$number    = preg_match('@[0-9]@', $user_password);
-	$specialChars = preg_match('@[^\w]@', $user_password);
 
 	$errors = array();
 
@@ -35,16 +34,19 @@ if (isset($_POST['submitted'])):
         endif;
         if (empty($user_password)):
             $errors['user_password'] = 'Veuillez renseigner un mot de passe';
-        elseif (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($user_password) < 8):
+        elseif (!$uppercase || !$lowercase || !$number || strlen($user_password) < 8):
 	        $errors['user_password'] = 'Le mot de passe doit avoir une longueur d\'au moins 8 caractères
-	        et contenir une majuscule, un caractère special et un chiffre';
+	        et contenir une majuscule et un chiffre';
         endif;
         if($user_password != $user_confirmed_password):
             $errors['user_confirmed_password'] = 'Le mot de passe ne correspond pas';
         endif;
-    else:
-        $user_id = wp_insert_user($args);
     endif;
+	wp_insert_user($args);
+	$object = 'Confirmation de votre inscription';
+	$msg = 'Vous êtes maintenant inscrit';
+	$headers = 'From : '.get_option('admin_email')."\r\n";
+	wp_mail($user_email, $object, $msg, $headers);
 endif;
 
 

@@ -47,7 +47,7 @@ if (isset($_POST['submitted']) && empty($errors)):
 	$msg = 'Vous êtes maintenant inscrit';
 	$headers = 'From : '.get_option('admin_email')."\r\n";
 	wp_mail($user_email, $object, $msg, $headers);
-endif;
+
 
 
 ?>

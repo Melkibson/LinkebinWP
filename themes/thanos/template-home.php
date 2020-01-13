@@ -100,6 +100,13 @@ get_header();?>
 
                     map.addControl(geocoder);
 
+                    map.addControl(
+                        new MapboxDirections({
+                            accessToken: mapboxgl.accessToken
+                        }),
+                        'top-left'
+                    );
+
                     map.addLayer({
                         id: "clusters",
                         type: "circle",

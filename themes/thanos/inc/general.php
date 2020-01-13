@@ -137,6 +137,7 @@ function thanos_scripts() {
 	//Mapbox
 	wp_enqueue_style('mapbox-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css');
 	wp_enqueue_style('mapbox-gl-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css');
+    wp_enqueue_style('mapbox-gl-directions-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css');
 
 	wp_register_script('mapbox', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js');
 	wp_enqueue_script('mapbox');
@@ -146,6 +147,8 @@ function thanos_scripts() {
 	wp_enqueue_script('es6-promise');
 	wp_register_script('es6-promise-auto', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js');
 	wp_enqueue_script('es6-promise-auto');
+	wp_register_script('mapbox-gl-directions', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js');
+	wp_enqueue_script('mapbox-gl-directions');
 
 
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );

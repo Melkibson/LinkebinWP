@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'thanos_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -111,6 +110,18 @@ function send_smtp_email( $phpmailer ) {
 	$phpmailer->From       = SMTP_FROM;
 	$phpmailer->FromName   = SMTP_NAME;
 }
+
+function strip_and_trim($string){
+	return strip_tags(trim($string));
+}
+
+function validation_errors($error){
+	if (isset($error)):
+		echo $error;
+	endif;
+}
+
+
 
 /**
  * Enqueue scripts and styles.

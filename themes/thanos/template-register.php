@@ -3,25 +3,25 @@
  Template Name: Register
  */
 
-if (isset($_POST['submitted']) && empty($errors)):
-	$user_login = strip_tags(trim($_POST['login']));
-	$user_email = filter_var(strip_tags(trim($_POST['email'])),FILTER_VALIDATE_EMAIL );
-	$user_password = strip_tags(trim($_POST['password']));
-	$user_confirmed_password = strip_tags(trim($_POST['password2']));
 
+if (isset($_POST['submitted']) && empty($errors)):
+	$user_login = strip_and_trim($_POST['login']);
+	$user_email = filter_var(strip_and_trim($_POST['email']),FILTER_VALIDATE_EMAIL );
+	$user_password = strip_and_trim($_POST['password']);
+	$user_confirmed_password = strip_and_trim($_POST['password2']);
 	//Password strength validation
 	$uppercase = preg_match('@[A-Z]@', $user_password);
 	$lowercase = preg_match('@[a-z]@', $user_password);
 	$number    = preg_match('@[0-9]@', $user_password);
-
 	$errors = array();
+
 
 	$args = array(
 		'user_pass' => $user_password,
 		'user_login' => $user_login,
 		'user_email' => $user_email
 	);
-    if (isset($_POST['submitted']) && isset($errors)):
+    if (isset($_POST['submitted'])):
         if (empty($user_login)):
             $errors['user_login'] = 'Veuillez renseigner un identifiant';
         elseif (strlen($user_login) < 3):
@@ -45,9 +45,8 @@ if (isset($_POST['submitted']) && empty($errors)):
 	wp_insert_user($args);
 	$object = 'Confirmation de votre inscription';
 	$msg = 'Vous êtes maintenant inscrit';
-	$headers = 'From : '.get_option('admin_email')."\r\n";
-	wp_mail($user_email, $object, $msg, $headers);
-
+	wp_mail($user_email, $object, $msg);
+endif;
 
 
 ?>
@@ -55,22 +54,22 @@ if (isset($_POST['submitted']) && empty($errors)):
 	<div class="form-group" style="padding: 50px 0;">
         <label for="login">Identifiant</label>
         <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp">
-        <span><?= $errors['user_login']?></span>
+        <span><?php if (isset($errors['user_login'])) : echo $errors['user_login']; endif;?></span>
     </div>
     <div class="form-group" style="padding: 50px 0;">
         <label for="email">Email</label>
 		<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" style="">
-        <span><?= $errors['user_email']?></span>
+        <span><?php if (isset($errors['user_email'])) : echo $errors['user_email']; endif;?></span>
 	</div>
 	<div class="form-group" style="padding: 50px 0;">
 		<label for="password">Mot de passe</label>
 		<input type="password" class="form-control" id="password" name="password">
-        <span><?= $errors['user_password']?></span>
+        <span><?php if (isset($errors['user_password'])) : echo $errors['user_password']; endif;?></span>
     </div>
 	<div class="form-group" style="padding: 50px 0;">
 		<label for="password2">Confirmer le mot de passe</label>
 		<input type="password" class="form-control" id="password2" name="password2">
-        <span><?= $errors['user_confirmed_password']?></span>
+        <span><?php if (isset($errors['user_confirmed_password'])) : echo $errors['user_confirmed_password']; endif;?></span>
     </div>
 	<input type="submit" class="btn btn-primary" value="S'inscrire" name="submitted">
 </form>

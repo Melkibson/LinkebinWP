@@ -4,17 +4,24 @@
  */
 
 if (isset($_POST['submitted'])):
-	$login = $_POST['login'];
-	$email = $_POST['email'];
-
-//	wp_set_current_user($email);
-	$stored_email = get_user_by('email', $email);
-
-	if ($stored_email === $email):
-		retrieve_password();
-		echo '<script>alert("je te connais toua")</script>';
+	$user_login = $_POST['login'];
+	$user_email = $_POST['email'];
+	$user = get_user_by('login', $user_login);
+	$GLOBALS['reset_key'] = get_password_reset_key($user);
 
 
+	$reset = esc_url(get_site_url() . '/reset?user_login=' . $user_login . '&reset_key='. $GLOBALS['reset_key']);
+
+	if (email_exists($user_email) && username_exists($user_login)):
+		$object = 'Reinitialisation de mot passe';
+		$msg = <<<HTML
+		<div>
+		Cliquez sur ce lien pour reinitialiser votre mot de passe.
+		<a href="{$reset}">Clique</a>
+        </div>
+
+HTML;
+		wp_mail($user_email, $object, $msg);
 	else:
 		echo '<script>alert("je te connais po")</script>';
 	endif;

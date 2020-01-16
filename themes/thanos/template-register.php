@@ -17,9 +17,10 @@ if (isset($_POST['submitted']) && empty($errors)):
 
 
 	$args = array(
-		'user_pass' => $user_password,
+		'user_pass' => password_hash($user_password, PASSWORD_BCRYPT),
 		'user_login' => $user_login,
-		'user_email' => $user_email
+		'user_email' => $user_email,
+		'user_activation_key' => '',
 	);
     if (isset($_POST['submitted'])):
         if (empty($user_login)):

@@ -114,13 +114,38 @@ function send_smtp_email( $phpmailer ) {
 function strip_and_trim($string){
 	return strip_tags(trim($string));
 }
+add_action('init', 'thanos_login');
+function thanos_login(){
+	if (is_page('login')):
+		if ( isset( $_POST['submitted'] ) ):
 
-function validation_errors($error){
-	if (isset($error)):
-		echo $error;
+			$login_data                  = array();
+			$login_data['user_login']    = sanitize_user( $_POST['login'] );
+			$login_data['user_password'] = esc_attr( $_POST['password'] );
+
+
+			$user_data = wp_signon( $login_data, false );
+
+
+			if ( is_user_logged_in() ):
+				wp_clear_auth_cookie();
+				wp_set_current_user( $user_data->ID );
+				wp_set_auth_cookie( $user_data->ID, true );
+				wp_safe_redirect( home_url( '/' ) );
+				exit;
+			else:
+				echo '<script>alert("T\'es pas co")</script>';
+			endif;
+		endif;
 	endif;
 }
 
+// Set Content Type
+
+add_filter('wp_mail_content_type', 'set_content_type');
+function set_content_type(){
+	return "text/html";
+}
 
 
 /**

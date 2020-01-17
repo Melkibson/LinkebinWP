@@ -113,9 +113,11 @@ get_header();?>
             }
 
             //Intégration du geojson dans une variable
-            var request = JSON.parse(httpGet("https://angotbaptiste.com/test.php"));
-            var baseurl = 'http://localhost/wordpresslinkebin/';
+            var request = JSON.parse(httpGet("http://localhost:8000/bins/getAllBins"));
 
+            var baseurl = 'http://localhost/wordpresslinkebin/';
+            console.log(request);
+            console.log(request);
 
 
 
@@ -135,6 +137,7 @@ get_header();?>
                         clusterMaxZoom: 14, // Max zoom to cluster points on
                         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
                     });
+
 
 
 //GEOLOCALISATION
@@ -231,15 +234,13 @@ get_header();?>
                 map.on('click', 'unclustered-point', function (e) {
                     var coordinates = e.features[0].geometry.coordinates.slice();
                     var commune = e.features[0].properties.commune;
-                    var adresse = e.features[0].properties.adresse;
-                    var type = e.features[0].properties.dmt_type;
+                    var adresse = e.features[0].properties.adress;
                     console.log(adresse);
                     console.log(commune);
-                    console.log(type);
 
                     new mapboxgl.Popup()
                         .setLngLat(coordinates)
-                        .setHTML(adresse+'<p><strong>'+commune+'</strong></p>'+'<p>'+type+'</p>')
+                        .setHTML(adresse+'<p><strong>'+commune+'</strong></p>')
                         .addTo(map)
                 });
 
@@ -249,7 +250,6 @@ get_header();?>
                 map.on('mouseleave', 'clusters', function () {
                     map.getCanvas().style.cursor = '';
                 });
-
 
             });
             var toggleableLayerIds = ['clusters', 'unclustered-point'];

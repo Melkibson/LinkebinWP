@@ -205,4 +205,34 @@ a, a:hover {
   justify-content: center;
   color: #efefef; }
 
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px; }
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green; }
+
+.valid:before {
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
+  content: '\f14a';
+  padding-right: 10px;
+  font-size: 19px; }
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red; }
+
+.invalid:before {
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
+  content: '\f071';
+  padding-right: 10px; }
+
 /*# sourceMappingURL=source.css.map */

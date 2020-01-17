@@ -30,6 +30,7 @@ if (isset($_POST['submitted'])):
 endif;
 
 get_header();?>
+<div class="container"></div>
 
 	<form method="post" style="margin-top: 100px; height: 100px; background: #efefef;">
 		<?php
@@ -38,16 +39,23 @@ get_header();?>
 		<div class="form-group">
 			<label for="password">Nouveau mot de passe</label>
 			<input type="password" class="form-control" id="password" name="password" placeholder="•••••••••">
+				<div class="message">
+					<p>Le mot de passe doit contenir les elements suivant:</p>
+					<span id="letter" class="invalid"><b>Une minuscule</b></span><br>
+					<span id="capital" class="invalid"><b>Une majuscule</b></span><br>
+					<span id="number" class="invalid"><b>Un chiffre</b></span><br>
+					<span id="length" class="invalid"><b>8 caracteres</b></span>
+				</div>
 		</div>
 		<div class="form-group">
 			<label for="password2">Confirmer le mot de passe</label>
 			<input type="password" class="form-control" id="password2" name="password2" placeholder="•••••••••">
+			<div class="message">
+				<span id="match" class="invalid">les mots de passes ne correspondent pas</span>
+			</div>
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary" name="submitted">Envoyer</button>
-		</div>
-		<div>
-
 		</div>
 	</form>
 

@@ -8,6 +8,8 @@ function init() {
     var length = document.getElementById("length");
     var match = document.getElementById("match");
 
+    // Functions for validation
+
     function validatePassword(password, id, variable) {
         if (password.value.match(variable)) {
             id.classList.remove("invalid");
@@ -34,33 +36,26 @@ function init() {
         }
     }
 
-// When the user clicks on the password field, show the message box
+// Show the message box when errors are found
     password.onfocus = function () {
         document.getElementsByClassName("message").style.display = "block";
     };
 
-
-// When the user clicks outside of the password field, hide the message box
+// Hide the message box
     password.onblur = function () {
         document.getElementsByClassName("message").style.display = "none";
     };
 
-
-// When the user starts to type something inside the password field
+// Check password required parameters
     password.onkeyup = function () {
-        // Validate lowercase letters
         var lowerCaseLetters = /[a-z]/g;
         validatePassword(password, letter, lowerCaseLetters);
 
-        // Validate capital letters
         var upperCaseLetters = /[A-Z]/g;
         validatePassword(password, capital, upperCaseLetters);
 
-        // Validate numbers
         var numbers = /[0-9]/g;
         validatePassword(password, number, numbers);
-
-        // Validate length
 
         if (password.value.length >= 8) {
             length.classList.remove("invalid");

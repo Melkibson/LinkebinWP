@@ -11,6 +11,10 @@ body {
 
 }
 
+#login-page {
+  background: none;
+}
+
 a, a:hover {
   text-transform: capitalize;
   text-decoration: none;
@@ -105,73 +109,6 @@ a, a:hover {
 .pull-up {
   margin-top: -290px;
 }
-.login-dark form {
-  max-width: 320px;
-  width: 90%;
-  background-color: #1e2833;
-  padding: 40px;
-  border-radius: 4px;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: #fff;
-  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
-}
-
-.login-dark .illustration {
-  text-align: center;
-  padding: 15px 0 20px;
-  font-size: 100px;
-  color: #2980ef;
-}
-
-.login-dark form .form-control {
-  background: none;
-  border: none;
-  border-bottom: 1px solid #434a52;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  color: inherit;
-}
-
-.login-dark form .btn-primary {
-  background: #214a80;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 26px;
-  text-shadow: none;
-  outline: none;
-}
-
-.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
-  background: #214a80;
-  outline: none;
-}
-
-.login-dark form .forgot {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  color: #6f7a85;
-  opacity: 0.9;
-  text-decoration: none;
-}
-
-.login-dark form .forgot:hover, .login-dark form .forgot:active {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.login-dark form .btn-primary:active {
-  transform: translateY(1px);
-}
-
-
-
 
 .my_account {
   background: #139A43;
@@ -188,44 +125,48 @@ a, a:hover {
 }
 
 
-.overlay-account {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
+//.overlay-account {
+//  height: 100%;
+//  width: 0;
+//  position: fixed;
+//  z-index: 1;
+//  top: 0;
+//  left: 0;
+//  background-color: rgba(0,0,0, 0.9);
+//  overflow-x: hidden;
+//  transition: 0.5s;
+//}
+//
+//.overlay-content {
+//  position: relative;
+//  top: 25%;
+//  width: 100%;
+//  text-align: center;
+//  margin-top: 30px;
+//}
+//
+//.overlay-account a {
+//  padding: 8px;
+//  text-decoration: none;
+//  font-size: 36px;
+//  color: #818181;
+//  display: block;
+//  transition: 0.3s;
+//}
+//
+//.overlay-account a:hover, .overlay a:focus {
+//  color: #f1f1f1;
+//}
+//
+//.overlay-account .closebtn {
+//  position: absolute;
+//  top: 20px;
+//  right: 45px;
+//  font-size: 60px;
+//}
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay-account a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay-account a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay-account .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+.form-container {
+  background: green;
 }
 
 #contact {
@@ -281,3 +222,4 @@ a, a:hover {
   content: '\f071';
   padding-right: 10px;
 }
+

@@ -20,19 +20,19 @@ function init() {
         }
     }
 
-    function checkConfirmedPassword(confirmedPassword, password) {
+    function checkConfirmedPassword(confirmedPassword, password, id) {
 
         if ((password.value.match(confirmedPassword.value))) {
-            match.classList.remove("invalid");
-            match.classList.add("valid");
-            match.innerHTML = 'Les mots de passe correspondent'
+            id.classList.remove("invalid");
+            id.classList.add("valid");
+            id.innerHTML = 'Les mots de passe correspondent'
 
         }
 
         if (confirmedPassword.value !== password.value) {
-            match.classList.remove("valid");
-            match.classList.add("invalid");
-            match.innerHTML = 'Les mots de passe ne correspondent pas'
+            id.classList.remove("valid");
+            id.classList.add("invalid");
+            id.innerHTML = 'Les mots de passe ne correspondent pas'
         }
     }
 
@@ -67,7 +67,7 @@ function init() {
     };
 
     confirmedPassword.onkeyup = function () {
-        checkConfirmedPassword(confirmedPassword, password)
+        checkConfirmedPassword(confirmedPassword, password, match)
     };
 }
 

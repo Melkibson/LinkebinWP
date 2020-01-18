@@ -1,4 +1,87 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+#reset-page {
+  background: linear-gradient(70deg, #d6d9d4 30%, rgba(0, 0, 0, 0) 30%), linear-gradient(30deg, #c7fdca 60%, #fff 60%);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.form-login {
+  background: #efefef;
+  border-radius: 10px;
+  position: relative;
+  bottom: 0;
+  max-height: 900px;
+  left: 0;
+  right: 0;
+  top: 0; }
+
+input {
+  border: none !important; }
+
+label {
+  color: #555555;
+  font-size: large;
+  padding: 5px 0 10px; }
+
+.form-title {
+  font-size: 27px;
+  padding: 15px;
+  color: #555555; }
+
+label[for=password]:before, label[for=password2]:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  padding-right: 10px;
+  font-size: 19px;
+  content: '\f023'; }
+
+label[for=login]:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  padding-right: 10px;
+  font-size: 19px;
+  content: '\f406'; }
+
+.form-content {
+  padding: 25px 5px; }
+
+#submit {
+  color: white;
+  background: #f6de18;
+  border: 2px solid #f6de18;
+  padding: 9px 20px;
+  border-radius: 27px; }
+
+#submit:hover {
+  border: 2px solid #ffb812;
+  background: #ffb812;
+  color: white; }
+
+/* The message box is shown when the user clicks on the password field */
+#message, #message-pwd {
+  display: none;
+  position: relative;
+  padding: 10px 0 20px 0;
+  margin-top: 10px;
+  transition: none 0.5s ease 0s; }
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green; }
+
+.valid:before {
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
+  content: '\f058';
+  padding-right: 11.75px; }
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red; }
+
+.invalid:before {
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
+  content: '\f071';
+  padding-right: 10px; }
+
 body,
 h1, h2, h3, h4, h5, h6,
 a, button, input {
@@ -6,9 +89,6 @@ a, button, input {
 
 body {
   background: linear-gradient(180deg, #139A43 65%, #fff 65%) no-repeat; }
-
-#login-page {
-  background: none; }
 
 a, a:hover {
   text-transform: capitalize;
@@ -100,58 +180,6 @@ a, a:hover {
   border: #139A43 2px solid;
   color: #139A43 !important; }
 
-#reset-page {
-  background: linear-gradient(70deg, #d6d9d4 30%, rgba(0, 0, 0, 0) 30%), linear-gradient(30deg, #c7fdca 60%, #fff 60%);
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-.form-login {
-  background: #efefef;
-  border-radius: 10px;
-  position: relative;
-  bottom: 0;
-  max-height: 900px;
-  left: 0;
-  right: 0;
-  top: 0; }
-
-label {
-  color: #555555;
-  font-size: large;
-  padding: 5px 0 10px; }
-
-.form-title {
-  font-size: 27px;
-  padding: 15px;
-  color: #555555; }
-
-label[for=password]:before, label[for=password2]:before {
-  font-family: "Font Awesome 5 Free", sans-serif;
-  padding-right: 10px;
-  font-size: 19px;
-  content: '\f023'; }
-
-label[for=login]:before {
-  font-family: "Font Awesome 5 Free", sans-serif;
-  padding-right: 10px;
-  font-size: 19px;
-  content: '\f406'; }
-
-.form-content {
-  padding: 25px 5px; }
-
-#submit {
-  color: white;
-  background: #f6de18;
-  border: 2px solid #f6de18;
-  padding: 9px 20px;
-  border-radius: 27px; }
-
-#submit:hover {
-  border: 2px solid #ffb812;
-  background: #ffb812;
-  color: white; }
-
 #contact {
   height: 30px;
   background: #d6d9d4; }
@@ -167,33 +195,5 @@ label[for=login]:before {
   display: flex;
   justify-content: center;
   color: #efefef; }
-
-/* The message box is shown when the user clicks on the password field */
-#message, #message-pwd {
-  display: none;
-  position: relative;
-  padding: 10px 0 20px 0;
-  margin-top: 10px; }
-
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-  color: green; }
-
-.valid:before {
-  font-family: 'Font Awesome 5 Free', sans-serif;
-  font-weight: 900;
-  content: '\f14a';
-  padding-right: 10px;
-  font-size: 19px; }
-
-/* Add a red text color and an "x" icon when the requirements are wrong */
-.invalid {
-  color: red; }
-
-.invalid:before {
-  font-family: 'Font Awesome 5 Free', sans-serif;
-  font-weight: 900;
-  content: '\f071';
-  padding-right: 10px; }
 
 /*# sourceMappingURL=source.css.map */

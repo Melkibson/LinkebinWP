@@ -63,7 +63,7 @@ endif;
                             <label for="password2">Confirmer le mot de passe</label>
                             <input type="password" class="form-control" id="password2" name="password2" placeholder="•••••••••">
                             <div id="message-pwd">
-                                <span id="match" class="invalid">les mots de passes ne correspondent pas</span>
+                                <span id="match" class="invalid"></span>
                             </div>
                         </div>
                         <div class="form-group pt-3">

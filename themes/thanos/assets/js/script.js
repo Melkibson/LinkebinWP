@@ -36,23 +36,21 @@ function init() {
         }
     }
 
-    function displayOnFocus(childId, parentId){
+    function displayAndHide(childId, parentId){
         childId.onfocus = function () {
-        document.getElementById(parentId).style.display = "block";
-        }
-    }
-
-    function hideOnBlur(childId, parentId){
+            document.getElementById(parentId).style.display = "block";
+        };
         childId.onblur = function () {
             document.getElementById(parentId).style.display = "none";
         }
     }
 
-// Show the message box when errors are found
-    displayOnFocus(password,'message');
-    displayOnFocus(confirmedPassword, 'message-pwd');
-    hideOnBlur(password, 'message');
-    hideOnBlur(confirmedPassword, 'message-pwd');
+    // Show the message box when errors are found
+
+    displayAndHide(password,'message');
+    // Hide the message box when no errors are found
+
+    displayAndHide(confirmedPassword, 'message-pwd');
 
 
 // Check password required parameters
@@ -105,6 +103,7 @@ function init() {
     //     document.getElementById("mainContent").style.margin = "auto";
     // }
 }
+// Run script after the page is loaded
 
 document.addEventListener('readystatechange', function() {
     if (document.readyState === "complete") {

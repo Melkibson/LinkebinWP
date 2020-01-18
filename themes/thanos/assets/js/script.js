@@ -36,15 +36,24 @@ function init() {
         }
     }
 
-// Show the message box when errors are found
-    password.onfocus = function () {
-        document.getElementsByClassName("message").style.display = "block";
-    };
+    function displayOnFocus(childId, parentId){
+        childId.onfocus = function () {
+        document.getElementById(parentId).style.display = "block";
+        }
+    }
 
-// Hide the message box
-    password.onblur = function () {
-        document.getElementsByClassName("message").style.display = "none";
-    };
+    function hideOnBlur(childId, parentId){
+        childId.onblur = function () {
+            document.getElementById(parentId).style.display = "none";
+        }
+    }
+
+// Show the message box when errors are found
+    displayOnFocus(password,'message');
+    displayOnFocus(confirmedPassword, 'message-pwd');
+    hideOnBlur(password, 'message');
+    hideOnBlur(confirmedPassword, 'message-pwd');
+
 
 // Check password required parameters
     password.onkeyup = function () {
@@ -69,6 +78,32 @@ function init() {
     confirmedPassword.onkeyup = function () {
         checkConfirmedPassword(confirmedPassword, password, match)
     };
+
+    // function openNav() {
+    //     document.getElementById("myNav").style.width = "100%";
+    // }
+    //
+    // function closeNav() {
+    //     document.getElementById("myNav").style.width = "0%";
+    // }
+    //
+    // document.getElementById("nav").addEventListener("click", toggleNav);
+    // function toggleNav(){
+    //     navSize = document.getElementById("sidebar-menu").style.width;
+    //     if (navSize == '200px') {
+    //         return close();
+    //     } else
+    //         return open();
+    // }
+    //
+    // function open() {
+    //     document.getElementById("sidebar-menu").style.width = "200px";
+    //     document.getElementById("mainContent").style.marginLeft = "250px";
+    // }
+    // function close() {
+    //     document.getElementById("sidebar-menu").style.width = "55px";
+    //     document.getElementById("mainContent").style.margin = "auto";
+    // }
 }
 
 document.addEventListener('readystatechange', function() {

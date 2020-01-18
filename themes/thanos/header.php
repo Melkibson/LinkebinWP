@@ -23,8 +23,8 @@
 <body id="page-top">
 
         <nav class="navbar navbar-expand-lg fixed-top border-0 shadow-sm p-0" id="mainNav">
-            <button id="prout-nav" class="navbar-brand border-0 m-0 h-100">
-                <img class="prout" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
+            <button id="nav" class="navbar-brand border-0 m-0 h-100">
+                <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
             </button>
             <div class="container-fluid">
                 <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive"

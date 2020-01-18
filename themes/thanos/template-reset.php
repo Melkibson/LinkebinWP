@@ -39,38 +39,38 @@ endif;
 
 	<?php wp_head(); ?>
 </head>
-<body id="login-page">
-		<div class="row">
-			<div class="col-7">
-				<p>
-					bonjour
-				</p>
-			</div>
-			<div class="form-container col-4 pt-2 pb-2 h-100 ">
-				<form method="post" style="">
-					<div class="form-group">
-						<label for="password">Nouveau mot de passe</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="•••••••••">
-							<div class="message">
-								<p>Le mot de passe doit contenir les elements suivant:</p>
-								<span id="letter" class="invalid"><b>Une minuscule</b></span><br>
-								<span id="capital" class="invalid"><b>Une majuscule</b></span><br>
-								<span id="number" class="invalid"><b>Un chiffre</b></span><br>
-								<span id="length" class="invalid"><b>8 caracteres</b></span>
-							</div>
-					</div>
-					<div class="form-group">
-						<label for="password2">Confirmer le mot de passe</label>
-						<input type="password" class="form-control" id="password2" name="password2" placeholder="•••••••••">
-						<div class="message">
-							<span id="match" class="invalid">les mots de passes ne correspondent pas</span>
-						</div>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary" name="submitted">Envoyer</button>
-					</div>
+<body id="reset-page" class="h-100">
+    <img src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
+
+			<section class="col-xl-5 col-md-8 col-sm-10 m-auto py-0">
+                <div class="form-group form-title">
+                    <h2 class="text-left">Reinitialiser son mot de passe</h2>
+                </div>
+				<form method="post" class=" form-login shadow-lg p-0">
+                    <div class="col-10 m-auto form-content">
+                        <div class="form-group">
+                            <label for="password">Nouveau mot de passe</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="•••••••••">
+                        </div>
+                        <div id="message">
+                            <p>Le mot de passe doit contenir les elements suivant:</p>
+                            <span id="letter" class="invalid">Une minuscule</span><br>
+                            <span id="capital" class="invalid">Une majuscule</span><br>
+                            <span id="number" class="invalid">Un chiffre</span><br>
+                            <span id="length" class="invalid">8 caracteres</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">Confirmer le mot de passe</label>
+                            <input type="password" class="form-control" id="password2" name="password2" placeholder="•••••••••">
+                            <div id="message-pwd">
+                                <span id="match" class="invalid">les mots de passes ne correspondent pas</span>
+                            </div>
+                        </div>
+                        <div class="form-group pt-3">
+                            <input type="submit" class="shadow" id="submit" name="submitted" value="envoyer">
+                        </div>
+                    </div>
 				</form>
-			</div>
-		</div>
+			</section>
 </body>
 <?php get_footer();

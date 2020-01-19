@@ -32,7 +32,10 @@ endif;
 	<?php wp_head(); ?>
 </head>
 <body id="user-page" class="h-100">
+<div class="form-nav d-inline-block">
     <img src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
+    <a href="<?= home_url('/') ?>">Retour</a>
+</div>
     <section class="col-xl-5 col-md-8 col-sm-10 m-auto py-0">
         <div class="form-group form-title">
             <h2 class="text-left">Se connecter</h2>

@@ -121,7 +121,28 @@ add_filter('wp_mail_content_type', 'set_content_type');
 function set_content_type(){
 	return "text/html";
 }
+// Rewrite rule for nicer url
+add_action('init', 'change_profile_url');
+function change_profile_url(){
+	global $wp_rewrite;
+	$wp_rewrite->author_base = 'profile';
+	$wp_rewrite->flush_rules();
+}
 
+add_filter('query_vars', 'profile_query_vars');
+function profile_query_vars($vars) {
+	// add lid to the valid list of variables
+	$new_vars = array('profile');
+	$vars = $new_vars + $vars;
+	return $vars;
+}
+
+add_filter('generate_rewrite_rules','profile_rewrite_rules');
+function profile_rewrite_rules( $wp_rewrite ) {
+	$new_rules = array();
+	$new_rules['profile/(\d*)$'] = 'index.php?author=$matches[1]';
+	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+}
 
 /**
  * Enqueue scripts and styles.

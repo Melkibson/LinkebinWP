@@ -8,7 +8,9 @@
  *
  * @package thanos
  */
-
+if (isset($_GET['logout'])):
+        wp_logout();
+endif;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> style="margin: 0 !important;">
@@ -36,12 +38,11 @@
                         <li class="nav-item" role="presentation">
                             <?php if (is_user_logged_in()):
 	                            $user = get_current_user_id(); ?>
-                                <a href="<?= esc_url( get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
-                                <a href="<?php wp_destroy_current_session(); ?>" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
-
+                                <a href="<?= esc_url(get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
+                                <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
                             <?php
                             else:?>
-                                <a href="<?= esc_url( site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
+                                <a href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
                             <?php endif;?>
                         </li>
                     </ul>

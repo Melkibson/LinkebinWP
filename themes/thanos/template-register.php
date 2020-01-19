@@ -5,7 +5,7 @@
 
 
 if (isset($_POST['submitted']) && empty($errors)):
-	$user_login = strip_and_trim($_POST['login']);
+	$user_login = sanitize_user($_POST['login']);
 	$user_email = filter_var(strip_and_trim($_POST['email']),FILTER_VALIDATE_EMAIL );
 	$user_password = strip_and_trim($_POST['password']);
 	$user_confirmed_password = strip_and_trim($_POST['password2']);
@@ -17,7 +17,7 @@ if (isset($_POST['submitted']) && empty($errors)):
 
 
 	$args = array(
-		'user_pass' => password_hash($user_password, PASSWORD_BCRYPT),
+		'user_pass' => $user_password,
 		'user_login' => $user_login,
 		'user_email' => $user_email,
 		'user_activation_key' => '',
@@ -47,6 +47,8 @@ if (isset($_POST['submitted']) && empty($errors)):
 	$object = 'Confirmation de votre inscription';
 	$msg = 'Vous êtes maintenant inscrit';
 	wp_mail($user_email, $object, $msg);
+	wp_safe_redirect(esc_url(home_url( 'login' )));
+	exit;
 endif;
 
 

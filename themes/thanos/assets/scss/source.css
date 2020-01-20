@@ -82,6 +82,17 @@ label[for=login]:before {
   content: '\f071';
   padding-right: 10px; }
 
+.profile-info {
+  border-radius: 15px;
+  background: #efefef;
+  height: 550px;
+  margin: 25px 10px 10px 20px; }
+
+.profile-title {
+  font-size: 30px;
+  margin: 25px 0 0 20px;
+  color: #555555; }
+
 body,
 h1, h2, h3, h4, h5, h6,
 a, button, input {

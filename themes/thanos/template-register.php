@@ -5,6 +5,7 @@
 
 
 if (isset($_POST['submitted']) && empty($errors)):
+
 	$user_login = sanitize_user($_POST['login']);
 	$user_email = filter_var(strip_and_trim($_POST['email']),FILTER_VALIDATE_EMAIL );
 	$user_password = strip_and_trim($_POST['password']);
@@ -44,6 +45,10 @@ if (isset($_POST['submitted']) && empty($errors)):
         endif;
     endif;
 	wp_insert_user($args);
+	$user = get_user_by('login', $user_login);
+	$user_id = $user->ID;
+	$url = 'http://localhost:8000/AddUser/' . $user_id;
+	wp_remote_get($url);
 	$object = 'Confirmation de votre inscription';
 	$msg = 'Vous êtes maintenant inscrit';
 	wp_mail($user_email, $object, $msg);
@@ -62,7 +67,7 @@ endif;
 
 	<?php wp_head(); ?>
 </head>
-<body id="reset-page" class="h-100">
+<body id="user-page" class="h-100">
     <img src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
     <section class="col-xl-5 col-md-8 col-sm-10 m-auto py-0">
         <div class="form-group form-title">

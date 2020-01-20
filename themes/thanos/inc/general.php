@@ -144,6 +144,12 @@ function profile_rewrite_rules( $wp_rewrite ) {
 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
 
+// Connection to API database
+function db_connection(){
+
+}
+
+
 /**
  * Enqueue scripts and styles.
  */

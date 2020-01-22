@@ -5,6 +5,12 @@
 
 }
 
+.form-nav a{
+  padding-top: 12px;
+  padding-left: 20px;
+}
+
+
 .form-login {
   background: #efefef;
   border-radius: 10px;
@@ -110,6 +116,17 @@ label[for=login]:before {
 
 .profile-title {
   font-size: 30px;
-  margin: 25px 0 0 20px;
+  margin-top: 25px;
   color: #555555;
+  padding-bottom: 50px;
 }
+
+.reset-pwd {
+  padding: 0 15px;
+}
+
+input[type=password] {
+  width: 60%;
+}
+
+

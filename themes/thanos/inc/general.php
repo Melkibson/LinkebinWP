@@ -121,6 +121,7 @@ add_filter('wp_mail_content_type', 'set_content_type');
 function set_content_type(){
 	return "text/html";
 }
+
 // Rewrite rule for nicer url
 add_action('init', 'change_profile_url');
 function change_profile_url(){
@@ -143,13 +144,25 @@ function profile_rewrite_rules( $wp_rewrite ) {
 	$new_rules['profile/(\d*)$'] = 'index.php?author=$matches[1]';
 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
+add_action('init', 'add_city');
+function add_city(){
+	$city_name = get_post_meta(get_the_ID(), '_data_name', true);
+	$city_region = get_post_meta(get_the_ID(), '_data_region', true);
+	$city_county = get_post_meta(get_the_ID(), '_data_county', true);
 
-// Connection to API database
-function db_connection(){
 
+	$url = 'http://localhost:8000/addCity';
+	wp_remote_post($url, array(
+		'method' => 'POST',
+		'headers'     => array(),
+		'body'        => array(
+			'name' => $city_name,
+			'region' => $city_region,
+			'departement' => $city_county
+		),
+
+	));
 }
-
-
 /**
  * Enqueue scripts and styles.
  */

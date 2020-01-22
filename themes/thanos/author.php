@@ -1,11 +1,51 @@
 <?php
-$user_id = get_current_user_id();
-$username = get_the_author_meta( 'user_login', $user_id);
-$email = get_the_author_meta('user_email', $user_id);
-$password = get_the_author_meta('user_pass', $user_id);
-$firstname = get_the_author_meta('user_firstname', $user_id);
-$lastname = get_the_author_meta('user_lastname', $user_id);
-$address = get_the_author_meta('user_description', $user_id);
+$user = wp_get_current_user();
+$username = get_the_author_meta( 'user_login', $user->ID);
+$email = get_the_author_meta('user_email', $user->ID);
+$firstname = get_the_author_meta('user_firstname', $user->ID);
+$lastname = get_the_author_meta('user_lastname', $user->ID);
+$address = get_the_author_meta('user_description', $user->ID);
+
+if (isset($_POST['submit'])):
+
+	$user_lastname = sanitize_user($_POST['lastname']);
+	$user_firstname = sanitize_user($_POST['firstname']);
+	$user_address = strip_and_trim($_POST['address']);
+
+	//Password strength validation
+
+	$args_profile = array(
+	    'ID'=> $user->ID,
+		'first_name' => $user_firstname,
+		'last_name' => $user_lastname,
+		'description' => $user_address
+	);
+
+	wp_update_user($args_profile);
+	$object = 'MAJ profil';
+	$msg = 'Votre profile a ete mis a jour';
+	wp_mail($email, $object, $msg);
+
+endif;
+
+if (isset($_POST['submitted']) && empty($errors)):
+	$old_password = wp_check_password($_POST['old-password'], $user->user_pass, $user->ID);
+    $new_password = strip_and_trim($_POST['password']);
+	$errors = array();
+
+	$args_pwd = array(
+	        'ID' => $user->ID,
+            'user_pass' => $new_password
+    );
+	if (!$old_password):
+		$errors['old-password'] = 'Mot de passe non reconnu';
+    endif;
+
+	wp_update_user($args_pwd);
+	$object = 'Mot de passe change';
+	$msg = 'Votre mot de passe a ete change';
+	wp_mail($email, $object, $msg);
+endif;
 ?>
 
 <!doctype html>
@@ -45,6 +85,7 @@ $address = get_the_author_meta('user_description', $user_id);
                         <div class="reset-pwd form-group d-flex justify-content-between">
                             <label for="password">Ancien mot de passe</label>
                             <input type="password" class="form-control" id="old-password" name="old-password" placeholder="•••••••••">
+                            <span><?php if (isset($errors['old-password'])) : echo $errors['old-password']; endif;?></span>
                         </div>
                         <div class="reset-pwd form-group d-flex justify-content-between">
                             <label for="password">Nouveau mot de passe</label>
@@ -91,7 +132,7 @@ $address = get_the_author_meta('user_description', $user_id);
 	                        <?php if (isset($address)):?> value="<?= $address; endif;?>">
                     </div>
                         <div class="form-group pt-3">
-                            <input type="submit" class="shadow" id="submit" name="submitted" value="sauvegarder">
+                            <input type="submit" class="shadow" id="submit" name="submit" value="sauvegarder">
                         </div>
                     </div>
                 </div>

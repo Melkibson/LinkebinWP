@@ -11,7 +11,7 @@ if (isset($_POST['submitted'])):
 	$user_reset_key = $GLOBALS['reset_key'];
 
 
-	$password = strip_and_trim(password_hash($_POST['password'], PASSWORD_DEFAULT));
+	$password = strip_and_trim($_POST['password']);
 	$confirmed_password = strip_and_trim($_POST['password2']);
 
 	if (isset($password) && $reset_key === $user_reset_key):

@@ -58,17 +58,20 @@ endif;
 
 
 ?>
-<!doctype html>
+    <!doctype html>
 <html <?php language_attributes(); ?> style="margin: 0 !important;" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
-</head>
+		<?php wp_head(); ?>
+    </head>
+    <nav class="form-nav d-flex justify-content-between">
+        <img class="h-100" src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
+        <a href="<?= home_url('/') ?>"><img src="<?= get_template_directory_uri() . '/assets/img/back.svg'?>" width="40px" alt=""></a>
+    </nav>
 <body id="user-page" class="h-100">
-    <img src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
     <section class="col-xl-5 col-md-8 col-sm-10 m-auto py-0">
         <div class="form-group form-title">
             <h2 class="text-left">S'inscrire</h2>

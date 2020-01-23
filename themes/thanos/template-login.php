@@ -32,10 +32,10 @@ endif;
 	<?php wp_head(); ?>
 </head>
 <body id="user-page" class="h-100">
-<div class="form-nav d-inline-block">
-    <img src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
-    <a href="<?= home_url('/') ?>">Retour</a>
-</div>
+<nav class="form-nav d-flex justify-content-between">
+    <img class="h-100" src="<?= get_template_directory_uri() . '/assets/img/logo_linkebin.png'?>" width="150px" alt="">
+    <a href="<?= home_url('/') ?>"><img src="<?= get_template_directory_uri() . '/assets/img/back.svg'?>" width="40px" alt=""></a>
+</nav>
     <section class="col-xl-5 col-md-8 col-sm-10 m-auto py-0">
         <div class="form-group form-title">
             <h2 class="text-left">Se connecter</h2>
@@ -50,9 +50,9 @@ endif;
                     <label for="password">Mot de passe</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="stay-connected">
-                    <label class="form-check-label" for="stay-connected">Rester connecté</label>
+                <div class="form-group d-flex justify-content-between">
+                    <a id="forgot" href="<?= esc_url(home_url('forgot'))?>">Mot de passe oublié ?</a>
+                    <a id="register" href="<?= esc_url(home_url('register'))?>">Pas encore de compte ?</a>
                 </div>
                 <div class="form-group pt-3">
                     <input type="submit" class="shadow" id="submit" name="submitted" value="envoyer">

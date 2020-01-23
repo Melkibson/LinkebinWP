@@ -6,7 +6,7 @@
 
 .form-nav a {
   padding-top: 12px;
-  padding-left: 20px; }
+  padding-right: 20px; }
 
 .form-login {
   background: #efefef;
@@ -17,6 +17,14 @@
   left: 0;
   right: 0;
   top: 0; }
+
+#forgot, #register {
+  padding-top: 30px;
+  font-size: 14px; }
+
+#forgot:before {
+  padding-right: 10px;
+  content: url("../thanos/assets/img/forgot.svg"); }
 
 input {
   border: none !important; }
@@ -42,6 +50,12 @@ label[for=login]:before {
   padding-right: 10px;
   font-size: 19px;
   content: '\f406'; }
+
+label[for=email]:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  padding-right: 10px;
+  font-size: 19px;
+  content: '\f0e0'; }
 
 .form-content {
   padding: 25px 5px; }
@@ -101,7 +115,7 @@ label[for=login]:before {
 .reset-pwd {
   padding: 0 15px; }
 
-input[type=password] {
+#old-password, #new-password, #confirmed-password {
   width: 60%; }
 
 body,

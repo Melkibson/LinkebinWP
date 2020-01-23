@@ -3,23 +3,16 @@
  Template Name: Home
  */
 get_header();?>
-    <main id="mainContent" class="p-0">
-        <div class="row">
-            <aside id="sidebar-menu" class="shadow-sm">
-                <ul>
-                    <li><a href="">Item</a></li>
-                </ul>
-            </aside>
-        </div>
+    <main id="mainContent" class="p-0 m-0">
         <div class="container main-title">
             <div class="row">
-                <div class="col-lg-9 m-auto">
+                <div class="col-lg-10 m-auto">
                     <h1>La plateforme qui vous réconcilie avec le recyclage</h1>
                 </div>
             </div>
         </div>
-        <div class=" pull-up">
-                <div class="col-lg-10 m-auto">
+        <div class="row pull-up w-100">
+                <div class="col-lg-9 m-auto">
                     <div class="card-m-b-30 bg-light rounded-lg shadow-sm">
                         <div class="card-header border-0">
                             <div class="card-title">Localisation des bennes</div>

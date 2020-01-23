@@ -154,8 +154,20 @@ function thanos_scripts() {
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );
 
 
+
+
 }
+
+
 add_action( 'wp_enqueue_scripts', 'thanos_scripts' );
+
+//function damaged($idbin, $iduser){
+//    $damaged = true;
+//    $url = 'http://localhost:8000/AddReportHistoric/' . $idbin . '/' . $iduser . '/' . $damaged;
+//    wp_remote_get($url);
+//}
+//
+//add_action("init", "damaged");
 
 /**
  * Enqueue admin scripts and styles

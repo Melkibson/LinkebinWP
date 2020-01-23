@@ -3,66 +3,15 @@
  Template Name: Home
  */
 get_header();?>
-<style>#map { position: relative; top: 0; bottom: 0; height: 800px;}</style>
-    <style>
-        #menu {
-            background: #fff;
-            position: absolute;
-            z-index: 1;
-            top: 10px;
-            right: 10px;
-            border-radius: 3px;
-            width: 120px;
-            border: 1px solid rgba(0, 0, 0, 0.4);
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        #menu a {
-            font-size: 13px;
-            color: #404040;
-            display: block;
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-            text-align: center;
-        }
-
-        #menu a:last-child {
-            border: none;
-        }
-
-        #menu a:hover {
-            background-color: #f8f8f8;
-            color: #404040;
-        }
-
-        #menu a.active {
-            background-color: #3887be;
-            color: #ffffff;
-        }
-
-        #menu a.active:hover {
-            background: #3074a4;
-        }
-    </style>
-    <main id="mainContent" class="p-0">
-        <div class="row">
-            <aside id="sidebar-menu" class="shadow-sm">
-                <ul>
-                    <li><a href="">Item</a></li>
-                </ul>
-            </aside>
-        </div>
+    <main id="mainContent" class="p-0 m-0">
         <div class="container main-title">
             <div class="row">
-                <div class="col-lg-9 m-auto">
+                <div class="col-lg-10 m-auto">
                     <h1>La plateforme qui vous réconcilie avec le recyclage</h1>
                 </div>
             </div>
         </div>
-        <div id="map2" class="container pull-up">
+        <div class="row pull-up w-100">
                 <div class="col-lg-9 m-auto">
                     <div class="card-m-b-30 bg-light rounded-lg shadow-sm">
                         <div class="card-header border-0">
@@ -131,10 +80,16 @@ get_header();?>
                     return xmlHttp.responseText;
                 }
 
+                function damaged(idbin, iduser){
+   var damaged = true;
+   var url = 'http://localhost:8000/AddReportHistoric/' + idbin + '/' + iduser + '/' + damaged;
+   window.location.assign(url);
+}
+
                 //Intégration du geojson dans une variable
                 var request = JSON.parse(httpGet("http://localhost:8000/bins/getAllBins"));
 
-                var baseurl = 'http://localhost/wordpresslinkebin/';
+                var baseurl = 'http://localhost:8888/wordpress/';
                 console.log(request);
                 console.log(request);
 
@@ -261,8 +216,14 @@ get_header();?>
 
                         new mapboxgl.Popup()
                             .setLngLat(coordinates)
-                            .setHTML(adresse + '<p><strong>' + commune + '</strong></p><p><button type="button" onclick="">Bonne etat</button><button type="button" onclick="">Mauvais etat</button><button type="button" onclick="">Pleine</button>')
+                            .setHTML(adresse + '<p><strong>' + commune + '</strong></p><p><input type="button" value="Bonne etat"><input id="MyButton" type="button" value="Mauvais etat"><input type="button" value="Pleine">')
                             .addTo(map)
+
+                        $(document).ready(function(){
+                            $('#MyButton').click(function(){
+                                damaged();
+                            });
+                        });
                     });
 
                     map.on('mouseenter', 'clusters', function () {

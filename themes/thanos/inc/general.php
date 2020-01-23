@@ -163,35 +163,65 @@ function add_city(){
 
 	));
 }
+
 /**
  * Enqueue scripts and styles.
  */
 function thanos_scripts() {
 	//Main JS
-	wp_register_script('main-js', get_template_directory_uri() . '/assets/js/script.js');
-	wp_enqueue_script('main-js');
+	wp_register_script( 'main-js', get_template_directory_uri() . '/assets/js/script.js' );
+	wp_enqueue_script( 'main-js' );
 
 	//Jquery
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js');
-	wp_enqueue_script('jquery');
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.4.1.min.js' );
+	wp_enqueue_script( 'jquery' );
 
 	//Bootstrap
-	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-	wp_register_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.js');
-	wp_enqueue_script('bootstrap-js');
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.js' );
+	wp_enqueue_script( 'bootstrap-js' );
 
 	//Font Awesome
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.css');
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/all.css' );
 
 	//Sweet Alert
-	wp_enqueue_style('sweetalert', get_template_directory_uri() . '/node_modules/sweetalert2/dist/sweetalert2.css');
-	wp_register_script('sweetalert-js', get_template_directory_uri() . '/node_modules/sweetalert2/dist/sweetalert2.all.js');
-	wp_enqueue_script('sweetalert-js');
+	wp_enqueue_style( 'sweetalert', get_template_directory_uri() . '/node_modules/sweetalert2/dist/sweetalert2.css' );
+	wp_register_script( 'sweetalert-js', get_template_directory_uri() . '/node_modules/sweetalert2/dist/sweetalert2.all.js' );
+	wp_enqueue_script( 'sweetalert-js' );
 
+	//Mapbox
+	wp_enqueue_style( 'mapbox-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' );
+	wp_enqueue_style( 'mapbox-gl-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' );
+	//wp_enqueue_style('mapbox-gl-directions-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css');
+
+	wp_register_script( 'mapbox', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js' );
+	wp_enqueue_script( 'mapbox' );
+	wp_register_script( 'mapbox-gl', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js' );
+	wp_enqueue_script( 'mapbox-gl' );
+	wp_register_script( 'es6-promise', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js' );
+	wp_enqueue_script( 'es6-promise' );
+	wp_register_script( 'es6-promise-auto', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js' );
+	wp_enqueue_script( 'es6-promise-auto' );
+	//wp_register_script('mapbox-gl-directions', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js');
+	//wp_enqueue_script('mapbox-gl-directions');
 
 
 	wp_enqueue_style( 'thanos-style', get_stylesheet_uri() );
-
 }
+
 add_action( 'wp_enqueue_scripts', 'thanos_scripts' );
+
+//function damaged($idbin, $iduser){
+//    $damaged = true;
+//    $url = 'http://localhost:8000/AddReportHistoric/' . $idbin . '/' . $iduser . '/' . $damaged;
+//    wp_remote_get($url);
+//}
+//
+//add_action("init", "damaged");
+
+/**
+ * Enqueue admin scripts and styles
+ */
+
+

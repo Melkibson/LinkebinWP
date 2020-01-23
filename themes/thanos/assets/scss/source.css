@@ -162,7 +162,7 @@ a, a:hover {
 
 .main-title {
   padding: 97px 0;
-  height: 600px; }
+  height: 500px; }
 
 .main-title h1 {
   padding: 90px 0 40px 0;
@@ -200,7 +200,7 @@ a, a:hover {
   list-style: none; }
 
 #map {
-  padding: 100px 0; }
+  padding-bottom: 0px; }
 
 .pull-up {
   margin-top: -290px; }

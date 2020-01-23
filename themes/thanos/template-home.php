@@ -80,6 +80,12 @@ get_header();?>
                     return xmlHttp.responseText;
                 }
 
+                function damaged(idbin, iduser){
+   var damaged = true;
+   var url = 'http://localhost:8000/AddReportHistoric/' + idbin + '/' + iduser + '/' + damaged;
+   window.location.assign(url);
+}
+
                 //Intégration du geojson dans une variable
                 var request = JSON.parse(httpGet("http://localhost:8000/bins/getAllBins"));
 
@@ -210,8 +216,14 @@ get_header();?>
 
                         new mapboxgl.Popup()
                             .setLngLat(coordinates)
-                            .setHTML(adresse + '<p><strong>' + commune + '</strong></p><p><button type="button" onclick="">Bonne etat</button><button type="button" onclick="">Mauvais etat</button><button type="button" onclick="">Pleine</button>')
+                            .setHTML(adresse + '<p><strong>' + commune + '</strong></p><p><input type="button" value="Bonne etat"><input id="MyButton" type="button" value="Mauvais etat"><input type="button" value="Pleine">')
                             .addTo(map)
+
+                        $(document).ready(function(){
+                            $('#MyButton').click(function(){
+                                damaged();
+                            });
+                        });
                     });
 
                     map.on('mouseenter', 'clusters', function () {

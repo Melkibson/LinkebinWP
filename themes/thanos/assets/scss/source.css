@@ -170,12 +170,10 @@ a, a:hover {
   text-align: center; }
 
 #map {
-padding-bottom: 0px;
-    position: relative;
+  position: relative;
   top: 0;
   bottom: 0;
-  height: 500px;
-}
+  height: 500px; }
 
 .pull-up {
   margin-top: -190px; }

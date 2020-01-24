@@ -164,6 +164,15 @@ function add_city(){
 	));
 }
 
+add_action('admin_footer', 'add_bin_button');
+function add_bin_button(){
+	echo '<script>
+		$(function () {
+            $("body.post-type-ville.wrap.h1").append(\'<label for="add_bin">Mettre a jour les poubelles</label><input type="submit" id="add_bin" name="add_bin">\');
+        });
+	</script>';
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -223,5 +232,3 @@ add_action( 'wp_enqueue_scripts', 'thanos_scripts' );
 /**
  * Enqueue admin scripts and styles
  */
-
-

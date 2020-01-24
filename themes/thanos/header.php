@@ -23,26 +23,8 @@ endif;
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <style>
-        body { margin: 0; padding: 0; }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
 
-        .marker {
-            background-image: url('assets/img/mapbox-icon.png');
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
 
-        .mapboxgl-popup {
-            max-width: 200px;
-        }
-
-        .mapboxgl-popup-content {
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-        }
     </style>
 
 	<?php wp_head(); ?>
@@ -57,16 +39,13 @@ endif;
 />
 
         <nav class="navbar navbar-expand-lg fixed-top border-0 shadow-sm p-0" id="mainNav">
-            <button id="nav" class="navbar-brand border-0 m-0 h-100">
-                <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
-            </button>
+            <div id="nav" class="h-100" style="background: #d6d9d4">
+                <img class="logo mt-2" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
+            </div>
             <div class="container-fluid">
-                <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive"
-                        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="nav navbar-nav ml-auto">
-                        <li id="contact-us" class="nav-item" role="presentation"><a class=" js-scroll-trigger" href="#contact">Contactez-nous</a></li>
+                        <li id="contact-us" class="nav-item" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
                         <li class="nav-item" role="presentation">
                             <?php if (is_user_logged_in()):
 	                            $user = get_current_user_id(); ?>
@@ -74,7 +53,7 @@ endif;
                                 <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
                             <?php
                             else:?>
-                                <a href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
+                                <a id="submit" href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
                             <?php endif;?>
                         </li>
                     </ul>

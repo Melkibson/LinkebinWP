@@ -3,31 +3,31 @@
  Template Name: Home
  */
 get_header();?>
-    <main id="mainContent" class="p-0 m-0">
-        <div class="container main-title">
-            <div class="row">
-                <div class="col-lg-10 m-auto">
-                    <h1>La plateforme qui vous réconcilie avec le recyclage</h1>
-                </div>
+    <section class="container-fluid main-title bg-light h-100">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 mx-auto pt-5 h-100">
+                <h1 class="h1">La plateforme qui vous reconcilie avec le recyclage</h1>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-8">
+                <img class="img-fluid" src="<?= get_template_directory_uri() . '/assets/img/recycle.svg'?>" alt="" width="100%" height="600px">
+            </div>
+            <div class="learn-more col-lg-3 col-md-6 col-sm-6 shadow rounded-lg text-center">
+                <p>Déja des milliers d'inscrits<br>Rejoignez le mouvement !</p>
+                <p class=""><a href="#map-section"><i class="fas fa-chevron-circle-down m-auto"></i></a></p>
             </div>
         </div>
-        <div class="row pull-up w-100">
-                <div class="col-lg-9 m-auto">
+    </section>
+        <section id="map-section" class="map-container container-fluid h-100">
+        <div class="row">
+                <div class="col-lg-10 m-auto">
                     <div class="card-m-b-30 bg-light rounded-lg shadow-sm">
-                        <div class="card-header border-0">
-                            <div class="card-title">Localisation des bennes</div>
-
-                        </div>
-                        <div class="card-body">
-                            <!-- <nav id="menu"></nav> -->
-                            <div id='map'></div>
-                        </div>
+                        <div class="card-body"><div id='map'></div></div>
                     </div>
                 </div>
         </div>
+        </section>
 
         <script>
-
             mapboxgl.accessToken = 'pk.eyJ1IjoibGlua2ViaW4iLCJhIjoiY2szbzcxNGIzMDVwdTNibXV6MWV6MXgxeiJ9.SU_Tmcud24UTRnCFDIJJVw';
 
             var options = {
@@ -80,11 +80,11 @@ get_header();?>
                     return xmlHttp.responseText;
                 }
 
-                function damaged(idbin, iduser){
-   var damaged = true;
-   var url = 'http://localhost:8000/AddReportHistoric/' + idbin + '/' + iduser + '/' + damaged;
-   window.location.assign(url);
-}
+                function damaged(idbin, iduser) {
+                    var damaged = true;
+                    var url = 'http://localhost:8000/AddReportHistoric/' + idbin + '/' + iduser + '/' + damaged;
+                    window.location.assign(url);
+                }
 
                 //Intégration du geojson dans une variable
                 var request = JSON.parse(httpGet("http://localhost:8000/bins/getAllBins"));
@@ -219,8 +219,8 @@ get_header();?>
                             .setHTML(adresse + '<p><strong>' + commune + '</strong></p><p><input type="button" value="Bonne etat"><input id="MyButton" type="button" value="Mauvais etat"><input type="button" value="Pleine">')
                             .addTo(map)
 
-                        $(document).ready(function(){
-                            $('#MyButton').click(function(){
+                        $(document).ready(function () {
+                            $('#MyButton').click(function () {
                                 damaged();
                             });
                         });
@@ -266,9 +266,14 @@ get_header();?>
             }
 
 
+            $("a").on('click',function() {
+                $('html,body').animate({
+                        scrollTop: $("#map-section").offset().top},
+                    'slow');
+            });
+
 
         </script>
-    </main>
 
 
 

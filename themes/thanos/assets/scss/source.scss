@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 //Forms style
 @import "forms.scss";
+@import "font-size.scss";
 body,
 h1,h2,h3,h4,h5,h6,
 a, button, input{
   font-family: 'Ubuntu', sans-serif;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 body {
-  background:linear-gradient(180deg, #139A43 65%, #fff 65%) no-repeat
+  background:white;
 
 }
 
@@ -20,7 +28,7 @@ a, a:hover {
 
 }
 
-//Na
+//Nav
 
 #mainNav {
   background: #fff;
@@ -58,27 +66,56 @@ a, a:hover {
 }
 
 .main-title {
-  padding: 97px 0;
-  height: 500px;
+  padding-left: 30px;
+  height: 100%;
 }
 
 .main-title h1 {
-  padding: 90px 0 40px 0;
-  color: #fff;
-  text-align: center;
+  font-size: 70px;
+  color: #555555;
+  text-align: left;
 }
 
+.learn-more {
+  margin-top: 50px;
+  background: #5fbd75;
+  padding: 20px 30px 5px;
+
+}
+
+.learn-more p {
+  font-size: 27px;
+  color: white ;
+}
+
+.learn-more a{
+  font-size: 45px;
+  color: white ;
+}
+
+#map-section{
+  background: #139A43;
+}
 #map {
-  position: relative;
-  top: 0;
-  bottom: 0;
   height: 500px;
+};
+
+.marker {
+  background-image: url('assets/img/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
 }
-;
 
+.mapboxgl-popup {
+  max-width: 200px;
+}
 
-.pull-up {
-  margin-top: -190px;
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .my_account {
@@ -91,7 +128,7 @@ a, a:hover {
 .my_account:hover{
   background: transparent;
   border: #139A43 2px solid;
-  color: #139A43 !important;
+  color: white;
 
 }
 
@@ -112,4 +149,34 @@ a, a:hover {
   display: flex;
   justify-content: center;
   color: #efefef
+}
+
+@media (min-width: 544px) {
+  .main-title h1 {font-size: 45px;}
+  .learn-more p {}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .main-title h1 {font-size: 55px;}
+  .learn-more p {font-size: 22px;}
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .main-title h1 {
+    font-size: 70px;
+  }
+  .learn-more  {margin-top: -170px;}
+
+}
+  /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1441px) {
+  .main-title h1 {
+    font-size: 90px;
+  }
+  .learn-more p {font-size: 40px;}
+
+
 }

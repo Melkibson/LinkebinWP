@@ -73,35 +73,9 @@ function init() {
         }
     };
 
-    confirmedPassword.onkeyup = function () {
+    confirmedPassword.onkeypress = function () {
         checkConfirmedPassword(confirmedPassword, password, match)
     };
-
-    function openNav() {
-        document.getElementById("myNav").style.width = "100%";
-    }
-
-    function closeNav() {
-        document.getElementById("myNav").style.width = "0%";
-    }
-
-    document.getElementById("nav").addEventListener("click", toggleNav);
-    function toggleNav(){
-        navSize = document.getElementById("sidebar-menu").style.width;
-        if (navSize == '200px') {
-            return close();
-        } else
-            return open();
-    }
-
-    function open() {
-        document.getElementById("sidebar-menu").style.width = "200px";
-        document.getElementById("mainContent").style.marginLeft = "250px";
-    }
-    function close() {
-        document.getElementById("sidebar-menu").style.width = "55px";
-        document.getElementById("mainContent").style.margin = "auto";
-    }
 }
 // Run script after the page is loaded
 

@@ -47,6 +47,8 @@ function city_init()
 				'label' => 'Envoyer un fichier',
 			),
 
+
+
 		)
 	);
 

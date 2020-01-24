@@ -192,7 +192,7 @@ a, a:hover {
   background: #139A43; }
 
 #map {
-  height: 500px; }
+  height: 600px; }
 
 .marker {
   background-image: url("assets/img/mapbox-icon.png");
@@ -256,9 +256,10 @@ a, a:hover {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1441px) {
   .main-title h1 {
+    margin-top: 100px;
     font-size: 90px; }
 
-  .learn-more p {
-    font-size: 40px; } }
+  .main-title {
+    height: 1400px; } }
 
 /*# sourceMappingURL=source.css.map */

@@ -7,10 +7,10 @@ if (isset($_POST['submitted'])):
 	$user_login = $_POST['login'];
 	$user_email = $_POST['email'];
 	$user = get_user_by('login', $user_login);
-	$GLOBALS['reset_key'] = get_password_reset_key($user);
+	$_SESSION['reset_key'] = get_password_reset_key($user);
 
 
-	$reset = esc_url(get_site_url() . '/reset?user_login=' . $user_login . '&reset_key='. $GLOBALS['reset_key']);
+	$reset = esc_url(get_site_url() . '/reset?user_login=' . $user_login . '&reset_key='. $_SESSION['reset_key']);
 
 	if (email_exists($user_email) && username_exists($user_login)):
 		$object = 'Reinitialisation de mot passe';

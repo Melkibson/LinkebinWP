@@ -8,7 +8,7 @@ if (isset($_POST['submitted'])):
 	$login = $_GET['user_login'];
 	$reset_key = $_GET['reset_key'];
 	$user = get_user_by('login', $login);
-	$user_reset_key = $GLOBALS['reset_key'];
+	$user_reset_key = $_SESSION['reset_key'];
 
 
 	$password = strip_and_trim($_POST['password']);

@@ -47,12 +47,12 @@ get_header();?>
         {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.send( null );
+            xmlHttp.send();
             return xmlHttp.responseText;
         }
 
         //Intégration du geojson dans une variable
-        var request = JSON.parse(httpGet("http://localhost:8000/city"));
+        var request = JSON.parse(httpGet("http://127.0.0.1:8000/city"));
 
 
 

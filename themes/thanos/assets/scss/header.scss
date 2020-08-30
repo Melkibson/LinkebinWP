@@ -38,6 +38,10 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items:center;
     background: white;
     opacity: 0;
     transform: scale(0.5);

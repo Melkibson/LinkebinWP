@@ -177,9 +177,9 @@ function add_bin_button(){
  * Enqueue scripts and styles.
  */
 function thanos_scripts() {
-	//Main JS
-	wp_register_script( 'main-js', get_template_directory_uri() . '/assets/js/script.js', false, NULL, true);
-	wp_enqueue_script( 'main-js');
+	// //Main JS
+	// wp_register_script( 'main-js', get_template_directory_uri() . '/assets/js/script.js', false, NULL, true);
+	// wp_enqueue_script( 'main-js');
 
 	//Mapbox
 	wp_enqueue_style( 'mapbox-css', 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' );

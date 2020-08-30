@@ -37,27 +37,27 @@ endif;
         type="text/css"
 />
 
-        <nav class="" id="">
-            <div class="logo">
-                <span>Linke</span><span>Bin</span>
-            </div>
-            <div>
-                <ul class="">
-                    <li id="contact-us" class="" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
-                    <li class="nav-item" role="presentation">
-                        <?php if (is_user_logged_in()):
-                            $user = get_current_user_id(); ?>
-                            <a href="<?= esc_url(get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
-                            <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
-                        <?php
-                        else:?>
-                            <a class="btn login" id="submit" href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
-                        <?php endif;?>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section class="section-login">
+    <nav class="" id="">
+        <div class="logo">
+            <span>Linke</span><span>Bin</span>
+        </div>
+        <div>
+            <ul class="">
+                <li id="contact-us" class="" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
+                <li class="nav-item" role="presentation">
+                    <?php if (is_user_logged_in()):
+                        $user = get_current_user_id(); ?>
+                        <a href="<?= esc_url(get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
+                        <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
+                    <?php
+                    else:?>
+                        <a class="btn-login">Connexion</a>
+                    <?php endif;?>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section-login">
         <div class="">
             <h2 class="text-left">Se connecter</h2>
         </div>
@@ -80,6 +80,7 @@ endif;
                 </div>
             </div>
         </form>
+    </section>
 
 
 

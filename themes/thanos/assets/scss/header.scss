@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    align-items: center;
+    .logo{
+        font-family: $logo-font;
+        font-size: 25px;
+    }
+    display: flex;
+    justify-content: space-between;
+    ul {
+        font-family: $primary-font;
+        display:flex;
+        list-style-type: none;
+        li {
+            &:not(last-child) {
+                margin-right: 30px;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

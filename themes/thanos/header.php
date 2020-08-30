@@ -38,14 +38,14 @@ endif;
         type="text/css"
 />
 
-        <nav class="navbar navbar-expand-lg fixed-top border-0 shadow-sm p-0" id="mainNav">
-            <div id="nav" class="h-100" style="background: #d6d9d4">
-                <img class="logo mt-2" src="<?php echo get_template_directory_uri() . '/assets/img/logo_linkebin.png';?>" width="150px" >
+        <nav class="" id="">
+            <div class="logo">
+                <span>Linke</span><span>Bin</span>
             </div>
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li id="contact-us" class="nav-item" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
+            <div class="">
+                <div id="navbarResponsive">
+                    <ul class="">
+                        <li id="contact-us" class="" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
                         <li class="nav-item" role="presentation">
                             <?php if (is_user_logged_in()):
 	                            $user = get_current_user_id(); ?>

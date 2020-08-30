@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Moranga-Black;
+  src: url(../fonts/Moranga-Black.otf);
+}
+@font-face {
+  font-family: Trust-Sans-Black;
+  src: url(../fonts/Trust-Sans-Black.otf);
+}
+@font-face {
+  font-family: Trust-Sans-Medium;
+  src: url(../fonts/Trust-Sans-Medium.otf);
+}
+body, html, * {
+  padding: 0px;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, i {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+body.block {
+  overflow: hidden;
+}

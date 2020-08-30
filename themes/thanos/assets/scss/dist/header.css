@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav .logo {
+  font-family: Trust-Sans-Black;
+  font-size: 25px;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+nav ul li:not(last-child) {
+  margin-right: 30px;
+}
+nav ul li:not(last-child) a {
+  text-decoration: none;
+}

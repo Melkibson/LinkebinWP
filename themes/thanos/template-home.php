@@ -3,7 +3,7 @@
  Template Name: Home
  */
 get_header();?>
-    <section class="container-fluid main-title bg-light h-100">
+    <!-- <section class="container-fluid main-title bg-light h-100">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 mx-auto pt-5 h-100">
                 <h1 class="h1">La plateforme qui vous reconcilie avec le recyclage</h1>
@@ -16,15 +16,9 @@ get_header();?>
                 <p class=""><a href="#map-section"><i class="fas fa-chevron-circle-down m-auto"></i></a></p>
             </div>
         </div>
-    </section>
-        <section id="map-section" class="map-container container-fluid h-100">
-        <div class="row">
-                <div class="col-lg-10 m-auto">
-                    <div class="card-m-b-30 bg-light rounded-lg shadow-sm">
-                        <div class="card-body"><div id='map'></div></div>
-                    </div>
-                </div>
-        </div>
+    </section> -->
+        <section id="map-section" class="">
+            <div id='map'></div>
         </section>
 
     <script>

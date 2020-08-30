@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Use Sass with WordPress, Node Script in SCSS flavour.",
   "scripts": {
-    "css": "node-sass --output-style compressed --include-path scss assets/scss/source.scss style.css",
+    "css": "node-sass --output-style compressed --include-path scss assets/scss/home.scss assets/css/home.min.css",
     "watch": "nodemon -e scss -x \"npm run css\""
   },
   "repository": {
@@ -22,5 +22,7 @@
   },
   "dependencies": {
     "sweetalert2": "^9.5.4"
-  }
+  },
+  "main": "index.js",
+  "keywords": []
 }

@@ -1,28 +1,76 @@
 @font-face {
-  font-family: "Moranga Black";
-  src: url("../webfonts/Moranga-Black.otf") format("otf");
+  font-family: Moranga-Black;
+  src: url(../fonts/Moranga-Black.otf);
 }
+@font-face {
+  font-family: Trust-Sans-Black;
+  src: url(../fonts/Trust-Sans-Black.otf);
+}
+@font-face {
+  font-family: Trust-Sans-Medium;
+  src: url(../fonts/Trust-Sans-Medium.otf);
+}
+body, html, * {
+  padding: 0px;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body, html {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, i {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body.block {
+  overflow: hidden;
 }
 
 nav {
+  height: 90px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 25px 0;
+  margin: 0 25px;
 }
 nav .logo {
-  font-family: "Moranga Black";
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Trust-Sans-Black";
   font-size: 25px;
 }
+nav .logo span:last-child {
+  color: #2a9d8f;
+}
 nav ul {
+  font-family: "Trust-Sans-Medium";
   display: flex;
   list-style-type: none;
 }
-nav ul li:not(last-child) {
+nav ul li:not(:last-child) {
   margin-right: 30px;
 }
-nav ul li:not(last-child) a {
+nav ul li:not(:last-child) a {
   text-decoration: none;
 }
 
@@ -30,15 +78,41 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
+  font-family: "Trust-Sans-Medium";
+  padding: 25px 0;
+  margin: 0 25px;
 }
 
-#map-section {
+#map-section .map-container {
+  height: calc(100vh - 150px);
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-#map-section #map {
+#map-section .map-container #map {
   height: calc(100vh - 150px);
   width: calc(100% - 50px);
   position: absolute;
-  margin: 0 auto;
+  border-radius: 10px;
+}
+#map-section .map-container #map .mapboxgl-ctrl-bottom-left, #map-section .map-container #map .mapboxgl-ctrl-bottom-right,
+#map-section .map-container #map .mapboxgl-ctrl-top-left, #map-section .map-container #map .mapboxgl-ctrl-top-right {
+  margin: 0 15px 15px;
+}
+#map-section .map-container .map-cover {
+  background: transparent;
+  height: calc(100vh - 120px);
+  width: calc(100% - 10px);
+  position: absolute;
+  border: 20px solid white;
+  border-radius: 40px;
+}
+
+body, a {
+  color: #001233;
+}
+
+.anim {
+  opacity: 1;
 }

@@ -35,6 +35,9 @@ h1, h2, h3, h4, h5, h6, i
 ul {
     list-style: none;
 }
+a {
+    text-decoration: none;
+}
 body.block
 {
 	overflow:hidden;
@@ -49,6 +52,13 @@ $primary-font: 'Trust-Sans-Medium';
 $oxford-blue: #001233;
 $blueberry:#809BCE;
 $metallic-silver: #95B8D1;
-$aqua-mint:#B8E0D2;
+$green:#2a9d8f;
 $light-green: #D6EADF;
 $light-pink:#EAC4D5;
+
+//Mixins
+
+@mixin styleGrid1 {
+    padding: 25px 0;
+    margin: 0 25px;
+}

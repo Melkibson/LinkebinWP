@@ -31,7 +31,6 @@ endif;
 </head>
 
 <body id="page-top">
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
 <link
         rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
@@ -42,23 +41,45 @@ endif;
             <div class="logo">
                 <span>Linke</span><span>Bin</span>
             </div>
-            <div class="">
-                <div id="navbarResponsive">
-                    <ul class="">
-                        <li id="contact-us" class="" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
-                        <li class="nav-item" role="presentation">
-                            <?php if (is_user_logged_in()):
-	                            $user = get_current_user_id(); ?>
-                                <a href="<?= esc_url(get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
-                                <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
-                            <?php
-                            else:?>
-                                <a id="submit" href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
-                            <?php endif;?>
-                        </li>
-                    </ul>
-                </div>
+            <div>
+                <ul class="">
+                    <li id="contact-us" class="" role="presentation"><a class=" js-scroll-trigger" href="mailto:contact@linkebin">Contactez-nous</a></li>
+                    <li class="nav-item" role="presentation">
+                        <?php if (is_user_logged_in()):
+                            $user = get_current_user_id(); ?>
+                            <a href="<?= esc_url(get_author_posts_url($user)); ?>" class="my_account  js-scroll-trigger shadow-sm">Mon Compte</a>
+                            <a href="?logout=true" class="my_account  js-scroll-trigger shadow-sm">Deconnexion</a>
+                        <?php
+                        else:?>
+                            <a class="btn login" id="submit" href="<?= esc_url(site_url('/login') ); ?>" class="my_account  js-scroll-trigger shadow-sm">Connexion</a>
+                        <?php endif;?>
+                    </li>
+                </ul>
+            </div>
         </nav>
+        <section class="section-login">
+        <div class="">
+            <h2 class="text-left">Se connecter</h2>
+        </div>
+        <form method="post" class="">
+            <div class="">
+                <div class="">
+                    <label for="login">Identifiant</label>
+                    <input type="text" class="" id="login" name="login" aria-describedby="emailHelp">
+                </div>
+                <div class="">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" class="" id="password" name="password">
+                </div>
+                <div class="">
+                    <a id="forgot" href="<?= esc_url(home_url('forgot'))?>">Mot de passe oublié ?</a>
+                    <a id="register" href="<?= esc_url(home_url('register'))?>">Pas encore de compte ?</a>
+                </div>
+                <div class="">
+                    <input type="submit" class="" id="submit" name="submitted" value="envoyer">
+                </div>
+            </div>
+        </form>
 
 
 

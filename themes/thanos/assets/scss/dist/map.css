@@ -1,10 +1,25 @@
-#map-section {
+#map-section .map-container {
+  height: calc(100vh - 150px);
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-#map-section #map {
+#map-section .map-container #map {
   height: calc(100vh - 150px);
   width: calc(100% - 50px);
   position: absolute;
-  margin: 0 auto;
+  border-radius: 10px;
+}
+#map-section .map-container #map .mapboxgl-ctrl-bottom-left, #map-section .map-container #map .mapboxgl-ctrl-bottom-right,
+#map-section .map-container #map .mapboxgl-ctrl-top-left, #map-section .map-container #map .mapboxgl-ctrl-top-right {
+  margin: 0 15px 15px;
+}
+#map-section .map-container .map-cover {
+  background: transparent;
+  height: calc(100vh - 120px);
+  width: calc(100% - 10px);
+  position: absolute;
+  border: 20px solid white;
+  border-radius: 40px;
 }

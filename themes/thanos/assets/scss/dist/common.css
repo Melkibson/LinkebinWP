@@ -36,6 +36,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body.block {
   overflow: hidden;
 }

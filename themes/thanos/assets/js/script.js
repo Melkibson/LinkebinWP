@@ -1,5 +1,15 @@
 // Password validation
 function init() {
+    function showLogin(selector1, selector2){
+        section = document.querySelector(selector1);
+        button = document.querySelector(selector2);
+
+        button.onclick = () => {
+            section.classList.add('anim')
+        }
+
+    }
+
     var password = document.getElementById("password");
     var confirmedPassword = document.getElementById("password2");
     var letter = document.getElementById("letter");
@@ -76,6 +86,8 @@ function init() {
     confirmedPassword.onkeypress = function () {
         checkConfirmedPassword(confirmedPassword, password, match)
     };
+
+    
 }
 // Run script after the page is loaded
 
@@ -85,3 +97,4 @@ document.addEventListener('readystatechange', function() {
         init();
     }
 });
+

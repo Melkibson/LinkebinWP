@@ -2,3 +2,12 @@
 @import 'header.scss';
 @import 'footer.scss';
 @import 'map.scss';
+
+body, a {
+    color: $oxford-blue;
+}
+
+.anim {
+    opacity: 1;
+}
+

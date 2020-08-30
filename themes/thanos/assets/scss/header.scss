@@ -1,18 +1,27 @@
 nav {
+    height: 90px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    @include styleGrid1;
     .logo{
+        height: 100%;
+        display: flex;
+        align-items: center;
         font-family: $logo-font;
         font-size: 25px;
+        span{
+            &:last-child{
+                color: $green;
+            }
+        }
     }
-    display: flex;
-    justify-content: space-between;
     ul {
         font-family: $primary-font;
         display:flex;
         list-style-type: none;
         li {
-            &:not(last-child) {
+            &:not(:last-child) {
                 margin-right: 30px;
                 a{
                     text-decoration: none;
@@ -20,4 +29,14 @@ nav {
             }
         }
     }
+}
+
+.section-login{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* z-index: 9; */
+    background: white;
 }

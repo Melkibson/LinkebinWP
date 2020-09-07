@@ -31,31 +31,70 @@ nav {
         }
     }
 }
-
-.section-login{
+.section-login {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 10;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items:center;
-    background: white;
     opacity: 1;
     transform: translateY(-100%);
+    background: white;
     transition: all 0.5s ease-in;
     overflow: hidden;
-
-    .text {
-        padding: 0 50px;
-        color: $oxford-blue;
-        font-size: 35px;
-        word-break: break-word;
-        // flex-shrink: 4;
-        // display: none;
+    .head {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .close {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .cross {
+                width: 25px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin: 40px 45px 0 0;
+                .line1 {
+                    position: absolute;
+                    width: 25px;
+                    height: 1.5px;
+                    background: #101010;
+                    transform: rotate(45deg);
+                    transition: 0.3s linear;
+                }
+                .line2 {
+                    width: 25px;
+                    height: 1.5px;
+                    background: #101010;
+                    transform: rotate(-45deg);
+                    transition: 0.3s linear;
+                }
+            }
+        }
+    }
+    
+    .container{
+        height: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        align-items:center;
+        
+        .text {
+            padding: 0 50px;
+            color: $oxford-blue;
+            font-size: 35px;
+            word-break: break-word;
+            // flex-shrink: 4;
+            // display: none;
+        }
     }
 }
 
@@ -121,7 +160,7 @@ nav {
                 }
             }
             .submit {
-                #submit {
+                input {
                     color: white;
                     cursor: pointer;
                     width: 130px;

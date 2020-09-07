@@ -8,6 +8,9 @@
  *
  * @package thanos
  */
+
+require('inc/extra/form.php');
+
 if (isset($_GET['logout'])):
         wp_logout();
 endif;
@@ -58,100 +61,110 @@ endif;
         </div>
     </nav>
     <section class="section-login">
-
-        <div class="text">
-        <a href="#" id="back">Retour connexion</a>
-            <h2 class="text-left">Bienvenue sur<br>Linke<span>Bin</span>!</h2>
+        <div class="head">
+            <a href="#" class="close">
+                <div href="#" class="cross">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                </div>
+            </a>
         </div>
-        <div class="line"></div>
-        <div class="container-form">
-            <div class="container-register">
-                <form method="post">
-                    <div class="">
-                        <div class="container-input">
-                            <label for="login">Identifiant</label>
-                            <input type="text" class="form-control" id="login" name="login" <?php if (isset($errors['user_login'])):?> value="<?= $user_login; endif;?>">
-                            <div class="line-input"></div>
-                            <span><?php if (isset($errors['user_login'])) : echo $errors['user_login']; endif;?></span>
-                        </div>
-                        <div class="container-input">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" <?php if (isset($errors['user_email'])):?> value="<?= $user_email; endif;?>">
-                            <div class="line-input"></div>
-                            <span><?php if (isset($errors['user_email'])) : echo $errors['user_email']; endif;?></span>
-                        </div>
-                        <div class="container-input">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" name="password">
-                            <div class="line-input"></div>
-                            <span><?php if (isset($errors['user_password'])) : echo $errors['user_password']; endif;?></span>
-                        </div>
-                        <!-- <div id="message">
-                            <p>Le mot de passe doit contenir les elements suivant:</p>
-                            <span id="letter" class="invalid">Une minuscule</span><br>
-                            <span id="capital" class="invalid">Une majuscule</span><br>
-                            <span id="number" class="invalid">Un chiffre</span><br>
-                            <span id="length" class="invalid">8 caracteres</span>
-                        </div> -->
-                        <div class="container-input">
-                            <label for="password2">Confirmer le mot de passe</label>
-                            <input type="password" class="form-control" id="password2" name="password2">
-                            <div class="line-input"></div>
-                            <span><?php if (isset($errors['user_confirmed_password'])) : echo $errors['user_confirmed_password']; endif;?></span>
+        <div class="container">
+            <div class="text">
+                <h2 class="text-left">Bienvenue sur<br>Linke<span>Bin</span>!</h2>
+            </div>
+            <div class="line"></div>
+            <div class="container-form">
+                <div class="container-register">
+                    <form method="post">
+                        <div class="">
+                            <div class="container-input">
+                                <label for="login">Identifiant</label>
+                                <input type="text" class="form-control" id="register-login" name="register-login" <?php if (isset($errors['user_login'])):?> value="<?= $user_login; endif;?>">
+                                <div class="line-input"></div>
+                                <span><?php if (isset($errors['user_login'])) : echo $errors['user_login']; endif;?></span>
+                            </div>
+                            <div class="container-input">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="register-email" name="register-email" <?php if (isset($errors['user_email'])):?> value="<?= $user_email; endif;?>">
+                                <div class="line-input"></div>
+                                <span><?php if (isset($errors['user_email'])) : echo $errors['user_email']; endif;?></span>
+                            </div>
+                            <div class="container-input">
+                                <label for="password">Mot de passe</label>
+                                <input type="password" class="form-control" id="register-password" name="register-password">
+                                <div class="line-input"></div>
+                                <span><?php if (isset($errors['user_password'])) : echo $errors['user_password']; endif;?></span>
+                            </div>
+                            <!-- <div id="message">
+                                <p>Le mot de passe doit contenir les elements suivant:</p>
+                                <span id="letter" class="invalid">Une minuscule</span><br>
+                                <span id="capital" class="invalid">Une majuscule</span><br>
+                                <span id="number" class="invalid">Un chiffre</span><br>
+                                <span id="length" class="invalid">8 caracteres</span>
+                            </div> -->
+                            <div class="container-input">
+                                <label for="password2">Confirmer le mot de passe</label>
+                                <input type="password" class="form-control" id="password2" name="password2">
+                                <div class="line-input"></div>
+                                <span><?php if (isset($errors['user_confirmed_password'])) : echo $errors['user_confirmed_password']; endif;?></span>
 
-                        </div>
-                    <!-- <div id="message-pwd">
-                        <span id="match" class="invalid"></span>
-                    </div> -->
-                        <div class="submit">
-                            <input type="submit"  id="submit" name="submitted" value="s'inscrire">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="container-login">
-                <form method="post">
-                    <div class="">
-                        <div class="container-input">
-                            <label for="login">Identifiant</label>
-                            <input type="text" id="login" name="login" aria-describedby="emailHelp">
-                            <div class="line-input"></div>
-                        </div>
-                        <div class="container-input">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" id="password" name="password">
-                            <div class="line-input"></div>
-                        </div>
-                        <div class="form-footer">
-                            <a id="forgot" href="#">Mot de passe oublié ?</a>
-                            <a id="register" href="#">Pas encore de compte ?</a>
-                        </div>
-                        <div class="submit">
-                            <input type="submit"  id="submit" name="submitted" value="se connecter">
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-            <div class="container-forgot">
-                <form method="post">
-                    <div class="">
-                        <div class="container-input">
-                            <label for="login">Identifiant</label>
-                            <input type="text" class="form-control" id="login" name="login" placeholder="Michel">
-                            <div class="line-input"></div>
-                        </div>
-                        <div class="container-input">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="example@linkebin.com">
-                            <div class="line-input"></div>
-                        </div>
-                            <div class="submit">
-                                <input type="submit" class="shadow" id="submit" name="submitted" value="envoyer">
+                            </div>
+                        <!-- <div id="message-pwd">
+                            <span id="match" class="invalid"></span>
+                        </div> -->
+                            <div class="form-footer submit">
+                                <input type="submit"  id="register-submit" name="register-submit" value="s'inscrire">
+                                <a href="#" id="back">Déjà inscrit ?</a>
                             </div>
                         </div>
-                    </div>
-                </form>     
+                    </form>
+                </div>
+                <div class="container-login">
+                    <form method="post">
+                        <div class="">
+                            <div class="container-input">
+                                <label for="login">Identifiant</label>
+                                <input type="text" id="login" name="login">
+                                <div class="line-input"></div>
+                            </div>
+                            <div class="container-input">
+                                <label for="password">Mot de passe</label>
+                                <input type="password" id="password" name="password">
+                                <div class="line-input"></div>
+                            </div>
+                            <div class="form-footer">
+                                <a id="forgot" href="#">Mot de passe oublié ?</a>
+                                <a id="register" href="#">Pas encore de compte ?</a>
+                            </div>
+                            <div class="submit">
+                                <input type="submit"  id="login-submit" name="login-submit" value="se connecter">
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="container-forgot">
+                    <form method="post">
+                        <div class="">
+                            <div class="container-input">
+                                <label for="login">Identifiant</label>
+                                <input type="text" class="form-control" id="forgot-login" name="forgot-login" placeholder="Michel">
+                                <div class="line-input"></div>
+                            </div>
+                            <div class="container-input">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="forgot-email" name="forgot-email" placeholder="example@linkebin.com">
+                                <div class="line-input"></div>
+                            </div>
+                                <div class="form-footer submit">
+                                    <input type="submit" id="forgot-submit" name="forgot-submit" value="envoyer">
+                                    <a href="#" id="back">Se connecter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>     
+                </div>
             </div>
         </div>
     </section>

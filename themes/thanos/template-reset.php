@@ -1,6 +1,6 @@
 <?php
-/**
-Template Name: Reset
+/*
+    Template Name: Reset
  */
 
 

@@ -12,6 +12,12 @@
     src: url(../fonts/Trust-Sans-Medium.otf);
     
 }
+
+@font-face {
+    font-family: Flix-Regular;
+    src: url(../fonts/Goldplay-Regular.otf);
+    
+}
 body, html, *
 {
 	padding: 0px;
@@ -25,6 +31,7 @@ body, html {
 }
 * {
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, h6, i
@@ -39,6 +46,10 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+input{
+	background: transparent;
+	border: 0px;
+}
 button{
 	color: none;
 }
@@ -51,12 +62,14 @@ body.block
 
 $logo-font: 'Trust-Sans-Black';
 $primary-font: 'Trust-Sans-Medium';
+$primary-font-regular: 'Flix-Regular';
 
 //Colors
-$oxford-blue: #001233;
+$black: #000;
+$oxford-blue: #455b5d;
 $blueberry:#809BCE;
 $metallic-silver: #95B8D1;
-$green:#2a9d8f;
+$green:#3CD3AD;
 $light-green: #D6EADF;
 $light-pink:#EAC4D5;
 
@@ -66,3 +79,4 @@ $light-pink:#EAC4D5;
     padding: 25px 0;
     margin: 0 25px;
 }
+

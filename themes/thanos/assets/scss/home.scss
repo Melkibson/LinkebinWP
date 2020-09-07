@@ -3,12 +3,14 @@
 @import 'footer.scss';
 @import 'map.scss';
 
-body, a {
+body {
+    font-family: $primary-font-regular;
     color: $oxford-blue;
 }
 
 .anim {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+    height: 100%;
 }
 

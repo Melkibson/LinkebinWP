@@ -24,6 +24,7 @@ nav {
             &:not(:last-child) {
                 margin-right: 30px;
                 a{
+                    color: $oxford-blue;
                     text-decoration: none;
                 }
             }
@@ -39,12 +40,121 @@ nav {
     left: 0;
     z-index: 10;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: space-evenly;
     align-items:center;
     background: white;
-    opacity: 0;
-    transform: scale(0.5);
+    opacity: 1;
+    transform: translateY(-100%);
     transition: all 0.5s ease-in;
-    
+    overflow: hidden;
+
+    .text {
+        padding: 0 50px;
+        color: $oxford-blue;
+        font-size: 35px;
+        word-break: break-word;
+        // flex-shrink: 4;
+        // display: none;
+    }
+}
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+    .container-login, .container-register, .container-forgot {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s linear;
+        form {
+            border-radius: 20px;
+            z-index: 1;
+            .container-input {
+                display: flex;
+                flex-flow: column;
+                margin-bottom: 20px;
+                font-weight: bold;
+                label{
+                    color: #455b5d;
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                    
+                }
+                input[type=text], input[type=email], 
+                input[type=password]{
+                    font-size: 20px;
+                    font-weight: normal;
+                    // border-bottom: 1px solid #4CB8C4;
+                    margin-bottom: 10px;
+                    &:focus{
+                        outline-style: none;
+                        & + .line-input{
+                            width: 0%;
+                        }
+                    }
+
+                }
+                .line-input {
+                    opacity: 0.5;
+                    height: 2px;
+                    width: 100%;
+                    transition: all 0.8s ease-in;
+                    background: #4CB8C4;
+                }
+                
+            }
+            .form-footer{
+                margin-bottom: 20px;
+                #forgot{
+                    transition: all 0.3s ease;
+                    &:hover{
+                        color: $black;
+                    }
+                }
+                #register {
+                    color: #4CB8C4;
+                    transition: all 0.3s ease;
+                    &:hover{
+                        color:#3f97a1;
+                    }
+                }
+            }
+            .submit {
+                #submit {
+                    color: white;
+                    cursor: pointer;
+                    width: 130px;
+                    height: 50px;
+                    border-radius: 7px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD 51%, #4CB8C4 100%);
+                    background-size: 200% auto;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-position: right center;
+                    }
+                }
+            }
+
+            a{
+                color: $oxford-blue;
+            }
+        }  
+    }
+}
+.container-register {
+    transform: translateY(-100%);
+}
+
+.container-forgot {
+    transform: translateY(100%);
+}
+
+.line {
+    height: 0%;
+    transition: all 1.7s ease-out;
+    width: 7px;
+    background-image: linear-gradient(to top, #4CB8C4 0%, #3CD3AD 51%, #4CB8C4 100%);
 }
